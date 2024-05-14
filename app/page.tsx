@@ -24,7 +24,7 @@ export default function Home() {
     setMount(mount-1);
     handleChange()
     try {
-       updateItem('6643a88f1c97730f36e01ecc', { count: newCount }); // Use the correct item ID here
+       updateItem('6643cc711a0ab97807aa5780', { count: newCount }); // Use the correct item ID here
     } catch (error) {
       console.error('Failed to update item', error);
     }
@@ -42,7 +42,7 @@ export default function Home() {
   useEffect(() => {
     const fetchInitialData = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:5000/items'); // Adjust the URL if needed
+        const response = await axios.get('https://button-game-backend.onrender.com/items'); // Adjust the URL if needed
         const data = response.data;
         // Assuming you have an item with an initial mount value
         const item = data.find((item: any) => item.t_id === 'telegram'); // Adjust the condition if needed

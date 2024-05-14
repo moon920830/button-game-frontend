@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://127.0.0.1:5000', // Adjust the baseURL to your backend server
+  baseURL: 'https://button-game-backend.onrender.com', // Adjust the baseURL to your backend server
 });
 
 export const updateItem = async (id: string, data: { count: number }) => {
