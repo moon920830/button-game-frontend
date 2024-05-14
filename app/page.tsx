@@ -7,14 +7,22 @@ import { updateItem } from './lib/api';
 
 import Button from '@mui/material/Button';
 
-
 export default function Home() {
   const [count, setCount] = useState<number>(0);
-  const [mount, setMount] = useState<number>(1000)
+  const [mount, setMount] = useState<number>(1000);
+  const [showAnimation, setShowAnimation] = useState(false);
+
+  const handleChange = () => {
+    setShowAnimation(true);
+    setTimeout(() => {
+      setShowAnimation(false);
+    }, 1000);
+  };
   const handleIncrement = () => {
     const newCount = count + 1
     setCount(count + 1);
     setMount(mount-1);
+    handleChange()
     try {
        updateItem('6643a88f1c97730f36e01ecc', { count: newCount }); // Use the correct item ID here
     } catch (error) {
@@ -86,8 +94,9 @@ export default function Home() {
         <div className="z-0 relative overflow-hidden h-3 rounded-full bg-[#FFFFFF] bg-opacity-15 mt-1">
           <div className="h-full rounded-full transition-transform !duration-500 opacity-100" style={{transform: `translateX(-${(100-(3+count/10))}%)`, background: "-webkit-linear-gradient(left, #0075FF, #86BEFF)"}}></div>
         </div>
-        <div className='mt-5 w-[200px] h-[200px] flex justify-center items-center bg-[#2D407C] rounded-full m-auto cursor-pointer border-[#424BAB] border-[12px]' onClick={handleIncrement}>
+        <div className='relative mt-5 w-[200px] h-[200px] flex justify-center items-center bg-[#2D407C] rounded-full m-auto cursor-pointer border-[#424BAB] border-[12px]' onClick={handleIncrement}>
           <img src='/images/hamster.webp' alt='hamster' className='w-[80%] h-[80%]'></img>
+          <div className={`animation absolute left-[50px] top-[60px] ${showAnimation ? '' : 'hidden'}`}>+1</div>
         </div>
         <div className='flex mt-5 text-white text-lg font-medium'>
           <div className=''>{mount}/1000</div>
