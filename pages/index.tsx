@@ -1,13 +1,24 @@
 "use client";
 
-import { useState, ChangeEvent } from 'react';
+import { useState,useEffect, ChangeEvent } from 'react';
 import axios from 'axios';
-import Router from 'next/router'; 
+import Router, { useRouter }  from 'next/router'; 
 
 import Button from '@mui/material/Button';
 
 export default function Index() {
   const [itemId, setItemId] = useState<string>('');
+  const router = useRouter();
+
+  useEffect(() => {
+    // Get the 'user' parameter from the URL
+    const { user } = router.query;
+    if (user) {
+      console.log(user)
+      setItemId(user as string);
+    }
+  }, [router.query]);
+
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setItemId(e.target.value);
   };
