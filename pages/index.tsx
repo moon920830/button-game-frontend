@@ -97,8 +97,8 @@ export default function Index() {
         <div className="z-0 relative overflow-hidden h-3 rounded-full bg-[#FFFFFF] bg-opacity-15 mt-1">
           <div className="h-full rounded-full transition-transform !duration-500 opacity-100" style={{transform: `translateX(-${(100-(3+count/10000))}%)`, background: "-webkit-linear-gradient(left, #0075FF, #86BEFF)"}}></div>
         </div>
-        <div className='relative mt-5 w-[200px] h-[200px] flex justify-center items-center bg-[#2D407C] rounded-full m-auto cursor-pointer border-[#424BAB] border-[12px]' onClick={handleIncrement}>
-          <img src='/images/hamster.webp' alt='hamster' className='w-[80%] h-[80%]'></img>
+        <div className='relative mt-5 w-[200px] h-[200px] flex justify-center items-center rounded-full m-auto cursor-pointer' onClick={handleIncrement}>
+          <img src='/images/hamster.jpg' alt='hamster' className='w-[90%] h-[90%] rounded-full'></img>
           <div className={`animation absolute left-[50px] top-[60px] ${showAnimation ? '' : 'hidden'}`}>+1</div>
         </div>
         <div className='flex mt-5 text-white text-lg font-medium'>
