@@ -1,10 +1,11 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://button-game-backend.onrender.com', // Adjust the baseURL to your backend server
+  // baseURL: 'https://button-game-backend.onrender.com', // Adjust the baseURL to your backend server
+  baseURL: 'http://localhost:5000'
 });
 
-export const updateItem = async (id: string, data: { count: number }) => {
+export const updateItem = async (id: any, data: { count: number }) => {
   try {
     const response = await api.patch(`/items/${id}`, data);
     return response.data;

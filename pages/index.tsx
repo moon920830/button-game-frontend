@@ -3,11 +3,11 @@
 import { useState, useEffect} from 'react';
 import axios from 'axios';
 
-import { updateItem } from './lib/api'; 
+import { updateItem } from '../app/lib/api'; 
 
 import Button from '@mui/material/Button';
 
-export default function Home() {
+export default function index() {
   const [count, setCount] = useState<number>(0);
   const [mount, setMount] = useState<number>(1000);
   const [showAnimation, setShowAnimation] = useState(false);
@@ -24,7 +24,8 @@ export default function Home() {
     setMount(mount-1);
     handleChange()
     try {
-       updateItem('6643cc711a0ab97807aa5780', { count: newCount }); // Use the correct item ID here
+       const id =  localStorage.getItem('id');
+       updateItem( id, { count: newCount }); // Use the correct item ID here
     } catch (error) {
       console.error('Failed to update item', error);
     }
@@ -42,10 +43,12 @@ export default function Home() {
   useEffect(() => {
     const fetchInitialData = async () => {
       try {
-        const response = await axios.get('https://button-game-backend.onrender.com/items'); // Adjust the URL if needed
+        // const response = await axios.get('https://button-game-backend.onrender.com/items'); // Adjust the URL if needed
+        const response = await axios.get('http://localhost:5000/items');
         const data = response.data;
         // Assuming you have an item with an initial mount value
-        const item = data.find((item: any) => item.t_id === 'telegram'); // Adjust the condition if needed
+        const id =  localStorage.getItem('id');
+        const item = data.find((item: any) => item._id === id); // Adjust the condition if needed
         setCount(item.mount);
       } catch (error) {
         console.error('Failed to fetch initial data', error);
