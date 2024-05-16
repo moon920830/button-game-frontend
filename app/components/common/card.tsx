@@ -77,6 +77,7 @@ function Card({title, price, link, img } : CardProps) {
                 keepMounted
                 onClose={handleClose}
                 aria-describedby="alert-dialog-slide-description"
+                sx={{backgroundColor: '#272A2F'}}
             >
                 <DialogTitle>
                     <div className='flex justify-center'>
