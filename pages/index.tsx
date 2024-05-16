@@ -6,7 +6,7 @@ import Router from 'next/router';
 
 import Button from '@mui/material/Button';
 
-export default function Login() {
+export default function Index() {
   const [itemId, setItemId] = useState<string>('');
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setItemId(e.target.value);

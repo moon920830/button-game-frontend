@@ -7,7 +7,7 @@ import { updateItem } from '../app/lib/api';
 
 import Button from '@mui/material/Button';
 
-export default function Index() {
+export default function Home() {
   const [count, setCount] = useState<number>(0);
   const [mount, setMount] = useState<number>(1000);
   const [showAnimation, setShowAnimation] = useState(false);
