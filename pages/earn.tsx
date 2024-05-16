@@ -29,7 +29,7 @@ function Earn() {
                 <Card title="Ticktok" price='1000' link=" http://www.tiktok.com/@spacetickets" img="/images/tiktok.avif"></Card>
             </div>
             <div className='grid grid-cols-5 mt-5 bg-[#272A2F] p-2'>
-                <div className=' text-xs px-1 py-4 text-white text-center rounded-lg'><Link href={'/home'}>Exchange</Link></div>
+                <div className=' text-xs px-1 py-4 text-white text-center rounded-lg'><Link href={'/'}>Exchange</Link></div>
                 <div className='bg-[#1C1F24] text-xs px-1 py-4 text-white text-center rounded-lg'><Link href={'/earn'}>Earn</Link></div>
             </div>
         </>
