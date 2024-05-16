@@ -1,19 +1,18 @@
 "use client";
 
 import { useState, useEffect} from 'react';
+import { useRouter } from 'next/router';
 import axios from 'axios';
 import Link from 'next/link';
 import { updateItem } from '../app/lib/api'; 
-import { useRouter }  from 'next/router'; 
 import Button from '@mui/material/Button';
 
 export default function Index() {
   const [count, setCount] = useState<number>(0);
   const [mount, setMount] = useState<number>(1000);
+  const [user, setUser] = useState<string>('');
   const [showAnimation, setShowAnimation] = useState(false);
   const router = useRouter();
-
-
   const handleChange = () => {
     setShowAnimation(true);
     setTimeout(() => {
@@ -43,20 +42,34 @@ export default function Index() {
   }, [mount]);
 
   useEffect(() => {
-    const { user } = router.query;
-    if (user) {
-      console.log(user)
-      const fetchData = async () => {
-        const response = await axios.post('https://button-game-backend.onrender.com/items', { user });
-        if(response.data.stats == 'success') {
-          const id  = response.data.item._id;
-          localStorage.setItem("id", id);
-        }
-        else alert("login error");
+    const fetchData = async () => {
+    try {
+      if (router.query.user) {
+        setUser(router.query.user.toString()); // Ensure user is a string
       }
-      fetchData();
-    }
-    else alert("login error");
+      // console.log(user);
+
+      if (user) {
+        // Make sure to include the full URL with http:// or https://
+        const response = await axios.post('https://button-game-backend.onrender.com/items', { user });
+        // const response = await axios.post('http://localhost:5000/items', { user });
+        if (response.data.stats === 'success') {
+          const id = response.data.item._id;
+          localStorage.setItem("id", id);
+        } else {
+          alert("Login error");
+        }
+      } else {
+        console.log("No user parameter found");
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      alert("Error fetching data");
+    }};
+    fetchData();
+  }, [router.query.user]);
+  useEffect(() => {
+    
     const fetchInitialData = async () => {
       try {
         const response = await axios.get('https://button-game-backend.onrender.com/items'); // Adjust the URL if needed
@@ -71,12 +84,12 @@ export default function Index() {
       }
     };
     fetchInitialData();
-  }, []);
+  });
   return (
     <>
       <div className="px-2 py-3 flex bg-[#453209] items-center">
         <img src="/images/avatar.png" alt="AvatarImg" className=' w-10 h-10'></img>
-        <div className=' text-sm font-medium text-white ml-3'>Tim Mark(CEO)</div>
+        <div className=' text-sm font-medium text-white ml-3'>@{user}</div>
         <Button variant="contained" sx={{paddingY: '8px', fontSize: '12px', paddingX: '8px', marginLeft: 'auto', borderRadius: '20px', textTransform: 'none', background: '#4C432D'}}>Choose exchange</Button>
       </div>
       <div className='px-2 pb-5'>
