@@ -11,6 +11,7 @@ import { TransitionProps } from '@mui/material/transitions';
 import Button from '@mui/material/Button';
 import axios from 'axios';
 import { useSnackbar } from 'notistack';
+import "../../globals.css"
 
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
