@@ -2,7 +2,7 @@
 
 import { useState, useEffect} from 'react';
 import axios from 'axios';
-
+import Link from 'next/link';
 import { updateItem } from '../app/lib/api'; 
 
 import Button from '@mui/material/Button';
@@ -19,9 +19,9 @@ export default function index() {
     }, 1000);
   };
   const handleIncrement = () => {
-    const newCount = count + 1
-    setCount(count + 1);
-    setMount(mount-1);
+    const newCount = count + 2
+    setCount(count + 2);
+    setMount(mount-2);
     handleChange()
     try {
        const id =  localStorage.getItem('id');
@@ -43,8 +43,8 @@ export default function index() {
   useEffect(() => {
     const fetchInitialData = async () => {
       try {
-        // const response = await axios.get('https://button-game-backend.onrender.com/items'); // Adjust the URL if needed
-        const response = await axios.get('http://localhost:5000/items');
+        const response = await axios.get('https://button-game-backend.onrender.com/items'); // Adjust the URL if needed
+        // const response = await axios.get('http://localhost:5000/items');
         const data = response.data;
         // Assuming you have an item with an initial mount value
         const id =  localStorage.getItem('id');
@@ -95,7 +95,7 @@ export default function index() {
           <div className='ml-auto text-xs'><span className='text-[#8B8E93] mr-2'>Level</span>1/9</div>
         </div>
         <div className="z-0 relative overflow-hidden h-3 rounded-full bg-[#FFFFFF] bg-opacity-15 mt-1">
-          <div className="h-full rounded-full transition-transform !duration-500 opacity-100" style={{transform: `translateX(-${(100-(3+count/10))}%)`, background: "-webkit-linear-gradient(left, #0075FF, #86BEFF)"}}></div>
+          <div className="h-full rounded-full transition-transform !duration-500 opacity-100" style={{transform: `translateX(-${(100-(3+count/10000))}%)`, background: "-webkit-linear-gradient(left, #0075FF, #86BEFF)"}}></div>
         </div>
         <div className='relative mt-5 w-[200px] h-[200px] flex justify-center items-center bg-[#2D407C] rounded-full m-auto cursor-pointer border-[#424BAB] border-[12px]' onClick={handleIncrement}>
           <img src='/images/hamster.webp' alt='hamster' className='w-[80%] h-[80%]'></img>
@@ -106,7 +106,8 @@ export default function index() {
           <div className='ml-auto'>Boost</div>
         </div>
         <div className='grid grid-cols-5 mt-5 bg-[#272A2F] p-2'>
-          <div className='bg-[#1C1F24] text-xs px-1 py-4 text-white text-center rounded-lg'>Exchange</div>
+          <div className='bg-[#1C1F24] text-xs px-1 py-4 text-white text-center rounded-lg'><Link href={'/'}>Exchange</Link></div>
+          <div className=' text-xs px-1 py-4 text-white text-center rounded-lg'><Link href={'/earn'}>Earn</Link></div>
         </div>
       </div>
     </>

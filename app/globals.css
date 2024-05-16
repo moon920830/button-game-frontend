@@ -36,6 +36,14 @@ body {
   animation-fill-mode: forwards;
 }
 
+.MuiDialog-paper{
+  min-width: 100vw !important;
+  margin-top: auto !important;
+  margin-bottom: 0px !important;
+  background-color: #272A2F;
+  color: white;
+}
+
 @keyframes example {
   0%   {opacity: 1; left :50px; top:60px;}
   100% {opacity: 0; left: 50px; top:10px;}
