@@ -4,7 +4,20 @@ import Card from '@/app/components/common/card';
 import Link from 'next/link';
 import Button from '@mui/material/Button';
 
+import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
+import EuroIcon from '@mui/icons-material/Euro';
+import { useEffect, useState } from 'react';
+
+
+
 function Earn() {
+    const [user, setUser] = useState<string | null>('')
+
+    useEffect(() => {
+        const user = localStorage.getItem("user");
+        setUser(user)
+    })
+
     return(
         <>
             <div className="px-2 py-3 flex bg-[#453209] items-center">
@@ -28,10 +41,10 @@ function Earn() {
                 <Card title="Instagram" price='1000' link="http://www.instagram.com/magiknft" img="/images/instagram.png"></Card>
                 <Card title="Ticktok" price='1000' link=" http://www.tiktok.com/@spacetickets" img="/images/tiktok.avif"></Card>
             </div>
-            <div className='grid grid-cols-5 mt-5 bg-[#272A2F] p-2'>
-                <div className=' text-xs px-1 py-4 text-white text-center rounded-lg'><Link href={'/'}>Exchange</Link></div>
-                <div className='bg-[#1C1F24] text-xs px-1 py-4 text-white text-center rounded-lg'><Link href={'/earn'}>Earn</Link></div>
-            </div>
+            <div className='flex justify-center mt-5 bg-[#272A2F] p-2 space-x-4'>
+          <div className=' text-xs px-1 py-3 text-white text-center rounded-lg space-x-2 items-center flex'><CurrencyExchangeIcon></CurrencyExchangeIcon><Link href={`/?user=${user}`}>Exchange</Link></div>
+          <div className='bg-[#1C1F24] text-xs px-2 py-3 text-white text-center rounded-lg mt-1 flex items-center space-x-1'><EuroIcon></EuroIcon><Link href={'/earn'}>Earn</Link></div>
+        </div>
         </>
     )
 }

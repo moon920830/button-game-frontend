@@ -7,12 +7,17 @@ import Link from 'next/link';
 import { updateItem } from '../app/lib/api'; 
 import Button from '@mui/material/Button';
 
+import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
+import EuroIcon from '@mui/icons-material/Euro';
+
 export default function Index() {
   const [count, setCount] = useState<number>(0);
   const [mount, setMount] = useState<number>(1000);
-  const [user, setUser] = useState<string>('');
   const [showAnimation, setShowAnimation] = useState(false);
+  const [user, setUser] = useState<string>('');
   const router = useRouter();
+  const userFromQuery = router.query.user?.toString() || '';
+  let storageUser
   const handleChange = () => {
     setShowAnimation(true);
     setTimeout(() => {
@@ -20,9 +25,9 @@ export default function Index() {
     }, 1000);
   };
   const handleIncrement = () => {
-    const newCount = count + 2
-    setCount(count + 2);
-    setMount(mount-2);
+    const newCount = count + 1
+    setCount(newCount);
+    setMount(mount-1);
     handleChange()
     try {
        const id =  localStorage.getItem('id');
@@ -42,49 +47,35 @@ export default function Index() {
   }, [mount]);
 
   useEffect(() => {
-    const fetchData = async () => {
-    try {
-      if (router.query.user) {
-        setUser(router.query.user.toString()); // Ensure user is a string
-      }
-      // console.log(user);
+    if(userFromQuery) {
+      setUser(userFromQuery);
+      
+    }
+  },[userFromQuery])
 
-      if (user) {
-        // Make sure to include the full URL with http:// or https://
+  useEffect(() => {
+    const fetchData = async () => {
+      console.log(user)
+      localStorage.setItem("user", user);
+      // storageUser = localStorage.getItem("user");
+      if(user != ''){
         const response = await axios.post('https://button-game-backend.onrender.com/items', { user });
-        // const response = await axios.post('http://localhost:5000/items', { user });
         if (response.data.stats === 'success') {
           const id = response.data.item._id;
           localStorage.setItem("id", id);
+          const res = await axios.get('https://button-game-backend.onrender.com/items');
+          const data = res.data;
+          // Assuming you have an item with an initial mount value
+          const itemId =  localStorage.getItem('id');
+          const item = data.find((item: any) => item._id === itemId); // Adjust the condition if needed
+          setCount(item.mount);
         } else {
           alert("Login error");
         }
-      } else {
-        console.log("No user parameter found");
       }
-    } catch (error) {
-      console.error("Error fetching data:", error);
-      alert("Error fetching data");
-    }};
+    }
     fetchData();
-  }, [router.query.user]);
-  useEffect(() => {
-    
-    const fetchInitialData = async () => {
-      try {
-        const response = await axios.get('https://button-game-backend.onrender.com/items'); // Adjust the URL if needed
-        // const response = await axios.get('http://localhost:5000/items');
-        const data = response.data;
-        // Assuming you have an item with an initial mount value
-        const id =  localStorage.getItem('id');
-        const item = data.find((item: any) => item._id === id); // Adjust the condition if needed
-        setCount(item.mount);
-      } catch (error) {
-        console.error('Failed to fetch initial data', error);
-      }
-    };
-    fetchInitialData();
-  });
+  }, [user])
   return (
     <>
       <div className="px-2 py-3 flex bg-[#453209] items-center">
@@ -127,16 +118,16 @@ export default function Index() {
           <div className="h-full rounded-full transition-transform !duration-500 opacity-100" style={{transform: `translateX(-${(100-(3+count/10000))}%)`, background: "-webkit-linear-gradient(left, #0075FF, #86BEFF)"}}></div>
         </div>
         <div className='relative mt-5 w-[200px] h-[200px] flex justify-center items-center rounded-full m-auto cursor-pointer' onClick={handleIncrement}>
-          <img src='/images/hamster.jpg' alt='hamster' className='w-[90%] h-[90%] rounded-full'></img>
+          <img src='/images/hamster.png' alt='hamster' className='w-[90%] h-[90%] rounded-full'></img>
           <div className={`animation absolute left-[50px] top-[60px] ${showAnimation ? '' : 'hidden'}`}>+1</div>
         </div>
         <div className='flex mt-5 text-white text-lg font-medium'>
           <div className=''>{mount}/1000</div>
           <div className='ml-auto'>Boost</div>
         </div>
-        <div className='grid grid-cols-5 mt-5 bg-[#272A2F] p-2'>
-          <div className='bg-[#1C1F24] text-xs px-1 py-4 text-white text-center rounded-lg'><Link href={'/'}>Exchange</Link></div>
-          <div className=' text-xs px-1 py-4 text-white text-center rounded-lg'><Link href={'/earn'}>Earn</Link></div>
+        <div className='flex justify-center mt-5 bg-[#272A2F] p-2 space-x-4'>
+          <div className='bg-[#1C1F24] text-xs px-1 py-3 text-white text-center rounded-lg space-x-2 items-center flex'><CurrencyExchangeIcon></CurrencyExchangeIcon><Link href={`/?user=${user}`}>Exchange</Link></div>
+          <div className=' text-xs px-1 py-3 text-white text-center rounded-lg mt-1 flex items-center space-x-2'><EuroIcon></EuroIcon><Link href={'/earn'}>Earn</Link></div>
         </div>
       </div>
     </>
