@@ -107,7 +107,7 @@ export default function Index() {
         <div className=' text-sm font-medium text-white ml-3'>@{user}</div>
         <Button variant="contained" sx={{paddingY: '8px', fontSize: '12px', paddingX: '8px', marginLeft: 'auto', borderRadius: '20px', textTransform: 'none', background: '#4C432D'}}>Choose exchange</Button>
       </div>
-      <div className='px-2 pb-5 relative'>
+      <div className='px-2 relative'>
         <div className='grid grid-cols-3 gap-2 pt-5 '>
           <div className='py-2 text-xs font-medium bg-[#272A2F] rounded-2xl text-center'>
             <div className='text-[#A0634B]'>Earn per tap</div>
@@ -142,17 +142,20 @@ export default function Index() {
           <div className="h-full rounded-full transition-transform !duration-500 opacity-100" style={{transform: `translateX(-${(100-(3+count/10000))}%)`, background: "-webkit-linear-gradient(left, #0075FF, #86BEFF)"}}></div>
         </div>
         <div className='mt-5 w-[200px] h-[200px] flex justify-center items-center rounded-full m-auto cursor-pointer' onClick={handleIncrement}>
-          <img src='/images/hamster.png' alt='hamster' className='w-[90%] h-[90%] rounded-full'></img>
+          <div className='w-[90%] h-[90%] rounded-full bg-cover' style={{backgroundImage : 'url(/images/hamster.png)', backgroundRepeat: 'none'}}></div>
+          {/* <img src='/images/hamster.png' alt='hamster' className='w-[90%] h-[90%] rounded-full'></img> */}
           <div className={`animation font-medium text-lg text-white ${showAnimation ? '' : 'hidden'}`} style={{ position: 'absolute', left: mousePosition.x + 'px', top: mousePosition.y + 'px' }}>+1</div>
         </div>
         <div className='flex mt-5 text-white text-lg font-medium'>
           <div className=''>{mount}/1000</div>
           <div className='ml-auto'>Boost</div>
         </div>
-        <div className='flex justify-center mt-5 bg-[#272A2F] p-2 space-x-4'>
-          <div className='bg-[#1C1F24] text-xs px-1 py-3 text-white text-center rounded-lg space-x-2 items-center flex'><CurrencyExchangeIcon></CurrencyExchangeIcon><Link href={`/?user=${user}`}>Exchange</Link></div>
-          <div className=' text-xs px-1 py-3 text-white text-center rounded-lg mt-1 flex items-center space-x-2'><EuroIcon></EuroIcon><Link href={'/earn'}>Earn</Link></div>
-        </div>
+      </div>
+      <div className='fixed bottom-0 w-full flex justify-center'>
+          <div className='flex justify-center mt-auto bg-[#272A2F] py-2 space-x-4 w-full'>
+            <Link href={`/?user=${user}`}><div className='bg-[#1C1F24] text-xs px-1 py-3 text-white text-center rounded-lg space-x-2 items-center flex'><CurrencyExchangeIcon></CurrencyExchangeIcon>Exchange</div></Link>
+            <Link href={'/earn'}><div className=' text-xs px-1 py-3 text-white text-center rounded-lg mt-1 flex items-center space-x-2'><EuroIcon></EuroIcon>Earn</div></Link>
+          </div>
       </div>
     </>
   );

@@ -63,15 +63,15 @@ function Earn() {
                     <Card title="Getgems" price='1000' link="http://getgems.io/virtualsworlds" img="/images/getgem.png" onLoad={handleImageLoad}></Card>
                     <Card title="Twitter" price='1000' link="http://x.com/VirtualsWorlds" img="/images/twitter.png" onLoad={handleImageLoad}></Card>
                     <Card title="Youtube" price='1000' link="http://youtube.com/@magicnft" img="/images/youtube.png" onLoad={handleImageLoad}></Card> 
-                    <Card title="Github" price='1000' link="http://github.com/MagicVipPeople" img="/images/gihub.png" onLoad={handleImageLoad}></Card>
-                    <Card title="Facebook" price='1000' link="http://www.facebook.com/MagicVipClub" img="/images/facebook.jpg" onLoad={handleImageLoad}></Card>
+                    <Card title="Github" price='1000' link="http://github.com/MagicVipPeople" img="/images/github.png" onLoad={handleImageLoad}></Card>
+                    <Card title="Facebook" price='1000' link="http://www.facebook.com/MagicVipClub" img="/images/facebook.png" onLoad={handleImageLoad}></Card>
                     <Card title="Instagram" price='1000' link="http://www.instagram.com/magiknft" img="/images/instagram.png" onLoad={handleImageLoad}></Card>
-                    <Card title="Ticktok" price='1000' link=" http://www.tiktok.com/@spacetickets" img="/images/tiktok.avif" onLoad={handleImageLoad}></Card>
+                    <Card title="Ticktok" price='1000' link=" http://www.tiktok.com/@spacetickets" img="/images/ticktok.png" onLoad={handleImageLoad}></Card>
                 </div>
-                <div className='fixed bottom-5 px-2 w-full flex justify-center opacity-80'>
-                    <div className='flex justify-center mt-5 bg-[#272A2F] p-2 space-x-4 w-full'>
-                        <div className=' text-xs px-1 py-3 text-white text-center rounded-lg space-x-2 items-center flex'><CurrencyExchangeIcon></CurrencyExchangeIcon><Link href={`/?user=${user}`}>Exchange</Link></div>
-                        <div className='bg-[#1C1F24] text-xs px-2 py-3 text-white text-center rounded-lg mt-1 flex items-center space-x-1'><EuroIcon></EuroIcon><Link href={'/earn'}>Earn</Link></div>
+                <div className='fixed bottom-0 w-full flex justify-center'>
+                    <div className='flex justify-center mt-5 bg-[#272A2F] px-2 py-2 space-x-4 w-full opacity-80' style={{backdropFilter: 'blur(10px)'}}>
+                        <Link href={`/?user=${user}`}><div className=' text-xs px-1 py-3 text-white text-center rounded-lg space-x-2 items-center flex'><CurrencyExchangeIcon></CurrencyExchangeIcon>Exchange</div></Link>
+                        <Link href={'/earn'}><div className='bg-[#1C1F24] text-xs px-2 py-3 text-white text-center rounded-lg mt-1 flex items-center space-x-1'><EuroIcon></EuroIcon>Earn</div></Link>
                     </div>
                 </div>
             </div>
