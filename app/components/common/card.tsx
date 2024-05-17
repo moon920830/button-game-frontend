@@ -19,7 +19,8 @@ interface CardProps {
     title : string,
     price : string,
     link : string,
-    img : string
+    img : string,
+    onLoad: () => void
 }
 
 const Transition = React.forwardRef(function Transition(
@@ -31,7 +32,7 @@ const Transition = React.forwardRef(function Transition(
     return <Slide direction="up" ref={ref} {...props} />;
   });
 
-function Card({title, price, link, img } : CardProps) {
+function Card({title, price, link, img, onLoad } : CardProps) {
     const snackbar = useSnackbar();
     const [open, setOpen] = React.useState(false);
 
@@ -53,7 +54,7 @@ function Card({title, price, link, img } : CardProps) {
         const response = await axios.post('http://localhost:5000/bonous', data);
         console.log(response.data)
         if(response.data.stats == "success"){
-            snackbar.enqueueSnackbar("You gain 1000 coins", {autoHideDuration : 1000})
+            snackbar.enqueueSnackbar(`You gain 1000 coins.  Your balance is ${response.data.mount}`, {autoHideDuration : 1000})
         }
         else snackbar.enqueueSnackbar("You need more time", {autoHideDuration : 1000})
         
@@ -61,7 +62,7 @@ function Card({title, price, link, img } : CardProps) {
     return (
         <>
             <div className='mt-5 bg-[#272A2F] px-2 py-2 flex flex-row rounded-md' onClick={handleClickOpen}>
-                <img src={img} alt='mexc' className='w-14 h-14'/>
+                <img src={img} alt='mexc' className='w-14 h-14' onLoad={onLoad}/>
                 <div className='text-md font-normal flex flex-col space-y-1 ml-3'>
                     <p>Join to our {title}</p>
                     <div className='flex space-x-2 items-center'>
