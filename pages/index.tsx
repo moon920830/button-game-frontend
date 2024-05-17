@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect} from 'react';
+import React, { useState, useEffect} from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import Link from 'next/link';
@@ -14,6 +14,7 @@ export default function Index() {
   const [count, setCount] = useState<number>(0);
   const [mount, setMount] = useState<number>(1000);
   const [showAnimation, setShowAnimation] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [user, setUser] = useState<string>('');
   const router = useRouter();
   const userFromQuery = router.query.user?.toString() || '';
@@ -24,7 +25,11 @@ export default function Index() {
       setShowAnimation(false);
     }, 1000);
   };
-  const handleIncrement = () => {
+  const handleIncrement = (event: React.MouseEvent<HTMLDivElement>) => {
+    // const { clientX, clientY } = event
+    const { clientX, clientY } = event;
+    console.log("Mouse X: ", clientX, "Mouse Y: ", clientY);
+    setMousePosition({ x: clientX, y: clientY });
     const newCount = count + 1
     setCount(newCount);
     setMount(mount-1);
@@ -78,12 +83,31 @@ export default function Index() {
   }, [user])
   return (
     <>
+      <div>
+        <style>
+          {
+            `
+            .animation {
+              opacity: 1;
+              animation-name: example;
+              animation-duration: 1s;
+              animation-fill-mode: forwards;
+            }
+
+            @keyframes example {
+              0%   {opacity: 1; left :${mousePosition.x +'px'}; top:${(mousePosition.y-70) + 'px'};}
+              100% {opacity: 0; left: ${mousePosition.x +'px'}; top:${(mousePosition.y - 150) + 'px'};}
+            }
+            `
+          }
+        </style>
+      </div>
       <div className="px-2 py-3 flex bg-[#453209] items-center">
-        <img src="/images/avatar.png" alt="AvatarImg" className=' w-10 h-10'></img>
+        <img src="/images/avatar.png" alt="AvatarImg" className='w-10 h-10'></img>
         <div className=' text-sm font-medium text-white ml-3'>@{user}</div>
         <Button variant="contained" sx={{paddingY: '8px', fontSize: '12px', paddingX: '8px', marginLeft: 'auto', borderRadius: '20px', textTransform: 'none', background: '#4C432D'}}>Choose exchange</Button>
       </div>
-      <div className='px-2 pb-5'>
+      <div className='px-2 pb-5 relative'>
         <div className='grid grid-cols-3 gap-2 pt-5 '>
           <div className='py-2 text-xs font-medium bg-[#272A2F] rounded-2xl text-center'>
             <div className='text-[#A0634B]'>Earn per tap</div>
@@ -91,7 +115,7 @@ export default function Index() {
                 <img src='/images/dollar-icon.svg' alt='dollar' className='w-6 h-6'></img>
                 <div className='text-white text-lg'>+1</div>
               </div>
-          </div>
+            </div>
           <div className='py-2 text-xs font-medium bg-[#272A2F] rounded-2xl text-center'>
             <div className='text-[#4A4E90]'>Coins to level up</div>
               <div className='flex mt-2 justify-center items-center space-x-2'>
@@ -117,9 +141,9 @@ export default function Index() {
         <div className="z-0 relative overflow-hidden h-3 rounded-full bg-[#FFFFFF] bg-opacity-15 mt-1">
           <div className="h-full rounded-full transition-transform !duration-500 opacity-100" style={{transform: `translateX(-${(100-(3+count/10000))}%)`, background: "-webkit-linear-gradient(left, #0075FF, #86BEFF)"}}></div>
         </div>
-        <div className='relative mt-5 w-[200px] h-[200px] flex justify-center items-center rounded-full m-auto cursor-pointer' onClick={handleIncrement}>
+        <div className='mt-5 w-[200px] h-[200px] flex justify-center items-center rounded-full m-auto cursor-pointer' onClick={handleIncrement}>
           <img src='/images/hamster.png' alt='hamster' className='w-[90%] h-[90%] rounded-full'></img>
-          <div className={`animation absolute left-[50px] top-[60px] ${showAnimation ? '' : 'hidden'}`}>+1</div>
+          <div className={`animation font-medium text-lg text-white ${showAnimation ? '' : 'hidden'}`} style={{ position: 'absolute', left: mousePosition.x + 'px', top: mousePosition.y + 'px' }}>+1</div>
         </div>
         <div className='flex mt-5 text-white text-lg font-medium'>
           <div className=''>{mount}/1000</div>

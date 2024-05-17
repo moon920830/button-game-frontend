@@ -26,15 +26,7 @@ body {
   }
 }
 
-.animation {
-  font-size: 18px;
-  font-weight: 600;
-  color: white;
-  opacity: 1;
-  animation-name: example;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-}
+
 
 .MuiDialog-paper{
   min-width: 100vw !important;
@@ -44,7 +36,4 @@ body {
   color: white;
 }
 
-@keyframes example {
-  0%   {opacity: 1; left :50px; top:60px;}
-  100% {opacity: 0; left: 50px; top:10px;}
-}
+
