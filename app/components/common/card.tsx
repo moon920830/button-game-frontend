@@ -61,7 +61,7 @@ function Card({title, price, link, img, onLoad } : CardProps) {
     }
     return (
         <>
-            <div className='mt-5 bg-[#272A2F] px-2 py-2 flex flex-row rounded-md' onClick={handleClickOpen}>
+            <div className='mt-5 bg-[#272A2F] px-2 py-2 flex flex-row rounded-md shadow-md' onClick={handleClickOpen}>
                 <img src={img} alt='mexc' className='w-14 h-14' onLoad={onLoad}/>
                 <div className='text-md font-normal flex flex-col space-y-1 ml-3'>
                     <p>Join to our {title}</p>
