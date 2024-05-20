@@ -9,6 +9,7 @@ import Button from "@mui/material/Button";
 
 import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
 import EuroIcon from "@mui/icons-material/Euro";
+import Diversity3Icon from '@mui/icons-material/Diversity3';
 
 export default function Index() {
   const [count, setCount] = useState<number>(0);
@@ -179,7 +180,7 @@ export default function Index() {
           <div
             className="h-full rounded-full transition-transform !duration-500 opacity-100"
             style={{
-              transform: `translateX(-${100 - (3 + count / 10000)}%)`,
+              transform: `translateX(-${100 - (3 + count / 50)}%)`,
               background: "-webkit-linear-gradient(left, #0075FF, #86BEFF)",
             }}
           ></div>
@@ -220,6 +221,12 @@ export default function Index() {
             <div className="bg-[#1C1F24] text-xs p-3 text-white text-center rounded-lg space-x-2 items-center flex">
               <CurrencyExchangeIcon></CurrencyExchangeIcon>
               <span>Exchange</span>
+            </div>
+          </Link>
+          <Link href={"/friend"}>
+            <div className=" text-xs p-3 text-white text-center rounded-lg flex items-center space-x-2">
+              <Diversity3Icon></Diversity3Icon>
+              <span>Friends</span>
             </div>
           </Link>
           <Link href={"/earn"}>

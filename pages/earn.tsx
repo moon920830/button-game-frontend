@@ -74,7 +74,7 @@ function Earn() {
         </div>
         <div className="mt-7 mb-20 px-2 text-white">
           <div className="text-xl font-medium ">Tasks list</div>
-          <Card
+          {/* <Card
             title="Telegram Channel"
             price="1000"
             link="https://t.me/MagicVipClub"
@@ -156,6 +156,195 @@ function Earn() {
             price="1000"
             link=" http://www.tiktok.com/@spacetickets"
             img="/images/ticktok.png"
+            onLoad={handleImageLoad}
+          ></Card> */}
+          <Card
+            title="Telegram MagicVipClub Channel"
+            price="10000"
+            link="https://t.me/MagicVipClub"
+            img="/images/telegram-1.svg"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Telegram MiningVws Channel"
+            price="10000"
+            link="https://t.me/miningvws"
+            img="/images/telegram-1.svg"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Telegram VirtualWorld Channel"
+            price="10000"
+            link="https://t.me/VirtualsWorlds"
+            img="/images/telegram-1.svg"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Telegram MagicNFTcollection Channel"
+            price="10000"
+            link="https://t.me/MagicNFTcollections"
+            img="/images/telegram-1.svg"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Telegram MagicVipPeople Channel"
+            price="10000"
+            link="https://t.me/MagicVipPeople"
+            img="/images/telegram-1.svg"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Telegram P2PExchange Channel"
+            price="10000"
+            link="https://t.me/p2pExchenges"
+            img="/images/telegram-1.svg"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Telegram AirdropNftOpensea Channel"
+            price="10000"
+            link="https://t.me/AirdropNftOpensea"
+            img="/images/telegram-1.svg"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Telegram MagicNftClub Channel"
+            price="10000"
+            link="https://t.me/MagicNftClub"
+            img="/images/telegram-1.svg"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Gate Magic-Game"
+            price="1000"
+            link="http://gate.io/nft/collection/11879/Magic-Game"
+            img="/images/gate-io.webp"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Gate Mystic-Collection"
+            price="1000"
+            link="http://gate.io/nft/collection/11875/Mystic-Collections"
+            img="/images/gate-io.webp"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Gate Virtual-Worlds"
+            price="1000"
+            link="http://gate.io/nft/collection/11910/Virtual-Worlds"
+            img="/images/gate-io.webp"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Gate BTC-Dragons"
+            price="1000"
+            link="http://gate.io/en/nft/collection/19896/BTC-Dragons"
+            img="/images/gate-io.webp"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Gate BTC-Cards"
+            price="1000"
+            link="http://gate.io/en/nft/collection/19897/Cryptocurrency-BTC-cards"
+            img="/images/gate-io.webp"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Gate BTC-Pandas"
+            price="1000"
+            link="http://gate.io/en/nft/collection/19895/BTC-Pandas"
+            img="/images/gate-io.webp"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Gate Earths"
+            price="1000"
+            link="http://gate.io/en/nft/collection/18106/Earths"
+            img="/images/gate-io.webp"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Gate Lions"
+            price="1000"
+            link="http://gate.io/en/nft/collection/19995/Lions"
+            img="/images/gate-io.webp"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Gate Crypto-Dragons"
+            price="1000"
+            link="http://gate.io/en/nft/collection/20025/Crypto-Dragons"
+            img="/images/gate-io.webp"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Gate Crypto-Dragons"
+            price="1000"
+            link="http://gate.io/en/nft/collection/20025/Crypto-Dragons"
+            img="/images/gate-io.webp"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Rarible"
+            price="1000"
+            link="http://rarible.com/magicnftcollections"
+            img="/images/rarible.svg"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Opensea"
+            price="1000"
+            link="http://opensea.io/MagicNFTcollections"
+            img="/images/opensea-logo.svg"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Tonresear"
+            price="1000"
+            link="https://tonresear.ch/t/tma-clicker-token-vws-game-mining-pool-vws-ton-dedust-io-mining-nfts-buidls-dorahacks-io/18457/3"
+            img="/images/tonresear-logo.png"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Ton Jetttons"
+            price="1000"
+            link="https://ton.app/ru/jettons/EQBfX9KO5yIFprHWPpJp3OsX-6cjLjEJF-h5uIQE3eLJY8_h"
+            img="/images/tonapp.svg"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Ton Mining-Nft"
+            price="1000"
+            link="https://ton.app/nft/mining-nft?id=1534"
+            img="/images/tonapp.svg"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Ton Utilities"
+            price="1000"
+            link="https://ton.app/utilities/vws-utilities?id=1531"
+            img="/images/tonapp.svg"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Ton Magic-vip-People"
+            price="1000"
+            link="https://ton.app/channels/magic-vip-people?id=1530"
+            img="/images/tonapp.svg"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Ton Mining-Vws"
+            price="1000"
+            link="https://ton.app/chats/mining-vws-and-mvp?id=1529"
+            img="/images/tonapp.svg"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Ton Vws-games"
+            price="1000"
+            link="https://ton.app/games/vws-games?id=1532"
+            img="/images/tonapp.svg"
             onLoad={handleImageLoad}
           ></Card>
         </div>
