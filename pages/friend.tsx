@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { useState, useEffect } from 'react';
 
+import { useSnackbar } from 'notistack';
+import axios from 'axios';
 
 import { Button } from "@mui/material";
 import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
@@ -10,11 +12,26 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
 function Friend() {
     const [user, setUser] = useState<string | null>("");
-  
+    const { enqueueSnackbar } = useSnackbar();
     useEffect(() => {
       const user = localStorage.getItem("user");
       setUser(user);
     });
+
+    const handleInviteClick = async () => {
+        // Generate the invite link
+        const inviteLink = `${window.location.origin}/invite?ref=${user}`;
+        console.log(inviteLink);
+
+        // Show the invite link in a snackbar or modal
+        enqueueSnackbar('Invite link copied to clipboard!', { variant: 'success' });
+
+        // Copy the link to the clipboard
+        navigator.clipboard.writeText(inviteLink);
+        const response = await axios.post('http://localhost:5000/sendInvite', {user, inviteLink});
+        console.log(response.data)
+    }
+
     return(
         <>
             <div className="px-2  flex py-3 bg-[#453209] items-center">
@@ -44,7 +61,7 @@ function Friend() {
             <div className="text-white text-3xl font-semibold text-center mt-5">Invite Friends!</div>
             <div className="text-white text-lg font-medium text-center mt-5">You and your friend will receive bonuses</div>
             <div className="flex mt-5 px-4 w-full space-x-2">            
-                <Button variant="contained" sx={{paddingY: '10px', fontSize: '18px', paddingX: '24px', borderRadius: '10px', textTransform: 'none', width: "100%" }}>
+                <Button variant="contained" sx={{paddingY: '10px', fontSize: '18px', paddingX: '24px', borderRadius: '10px', textTransform: 'none', width: "100%" }} onClick={handleInviteClick}>
                     Invite a friend
                 </Button>
                 <Button variant="contained"  sx={{paddingY: '10px', fontSize: '18px', paddingX: '24px', borderRadius: '10px', textTransform: 'none', }}>
