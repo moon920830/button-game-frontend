@@ -27,9 +27,11 @@ function Friend() {
         enqueueSnackbar('Invite link copied to clipboard!', { variant: 'success' });
 
         // Copy the link to the clipboard
-        navigator.clipboard.writeText(inviteLink);
-        const response = await axios.post('http://localhost:5000/sendInvite', {user, inviteLink});
-        console.log(response.data)
+        const shareLink = `https://t.me/share/url?url=${encodeURIComponent(inviteLink)}`;
+
+        // Open the share link in a new window
+        window.open(shareLink, '_blank');
+        
     }
 
     return(
