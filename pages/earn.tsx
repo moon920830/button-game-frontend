@@ -76,7 +76,7 @@ function Earn() {
         </div>
         <div className="mt-7 mb-20 px-2 text-white">
           <div className="text-xl font-medium ">Tasks list</div>
-          {/* <Card
+          <Card
             title="Telegram Channel"
             price="1000"
             link="https://t.me/MagicVipClub"
@@ -159,7 +159,7 @@ function Earn() {
             link=" http://www.tiktok.com/@spacetickets"
             img="/images/ticktok.png"
             onLoad={handleImageLoad}
-          ></Card> */}
+          ></Card>
           <Card
             title="Telegram MagicVipClub Channel"
             price="10000"
