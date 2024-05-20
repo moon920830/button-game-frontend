@@ -309,42 +309,42 @@ function Earn() {
             title="Ton Jetttons"
             price="1000"
             link="https://ton.app/ru/jettons/EQBfX9KO5yIFprHWPpJp3OsX-6cjLjEJF-h5uIQE3eLJY8_h"
-            img="/images/tonapp.svg"
+            img="/images/getgem.png"
             onLoad={handleImageLoad}
           ></Card>
           <Card
             title="Ton Mining-Nft"
             price="1000"
             link="https://ton.app/nft/mining-nft?id=1534"
-            img="/images/tonapp.svg"
+            img="/images/getgem.png"
             onLoad={handleImageLoad}
           ></Card>
           <Card
             title="Ton Utilities"
             price="1000"
             link="https://ton.app/utilities/vws-utilities?id=1531"
-            img="/images/tonapp.svg"
+            img="/images/getgem.png"
             onLoad={handleImageLoad}
           ></Card>
           <Card
             title="Ton Magic-vip-People"
             price="1000"
             link="https://ton.app/channels/magic-vip-people?id=1530"
-            img="/images/tonapp.svg"
+            img="/images/getgem.png"
             onLoad={handleImageLoad}
           ></Card>
           <Card
             title="Ton Mining-Vws"
             price="1000"
             link="https://ton.app/chats/mining-vws-and-mvp?id=1529"
-            img="/images/tonapp.svg"
+            img="/images/getgem.png"
             onLoad={handleImageLoad}
           ></Card>
           <Card
             title="Ton Vws-games"
             price="1000"
             link="https://ton.app/games/vws-games?id=1532"
-            img="/images/tonapp.svg"
+            img="/images/getgem.png"
             onLoad={handleImageLoad}
           ></Card>
         </div>
