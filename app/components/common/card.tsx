@@ -57,11 +57,11 @@ function Card({title, price, link, img, onLoad } : CardProps) {
             snackbar.enqueueSnackbar(`You gain 1000 coins.  Your balance is ${response.data.mount}`, {autoHideDuration : 1000})
         }
         else snackbar.enqueueSnackbar("You need more time", {autoHideDuration : 1000})
-        
+        setTimeout(() => window.open(link, "_blank") ,1000)
     }
     return (
         <>
-            <div className='mt-5 bg-[#272A2F] px-2 py-2 flex flex-row rounded-md shadow-md' onClick={handleClickOpen}>
+            <div className='cursor-pointer mt-5 bg-[#272A2F] px-2 py-2 flex flex-row rounded-md shadow-md' onClick={handleClickOpen}>
                 <img src={img} alt='mexc' className='w-14 h-14' onLoad={onLoad}/>
                 <div className='text-md font-normal flex flex-col space-y-1 ml-3'>
                     <p>Join to our {title}</p>
@@ -88,17 +88,14 @@ function Card({title, price, link, img, onLoad } : CardProps) {
                 <DialogContent>
                 <DialogContentText id="alert-dialog-slide-description" sx={{color: 'white'}}>
                     <div className='text-2xl font-semibold text-center mt-3'>{title}</div>
-                    <div className='flex justify-center mt-5'>
-                        <Button variant="contained" sx={{paddingY: '10px', fontSize: '18px', paddingX: '24px', borderRadius: '20px', textTransform: 'none', }}>
-                            <a href={link} target='_blank'>Join</a>
-                        </Button>
-                    </div>
                     <div className='flex justify-center space-x-2 items-center mt-4'>
                         <img src='/images/dollar-icon.svg' alt='dollar' className='w-5 h-5'/>
                         <div>+{price}</div>
                     </div>
                     <div className='flex justify-center mt-5'>
-                        <Button variant="contained" sx={{paddingY: '10px', fontSize: '18px', paddingX: '24px', borderRadius: '20px', textTransform: 'none', width: '100%' }} onClick={handleBonous}>Check</Button>
+                        <Button variant="contained" sx={{paddingY: '10px', fontSize: '18px', paddingX: '24px', borderRadius: '20px', textTransform: 'none', }} onClick={handleBonous}>
+                            Join
+                        </Button>
                     </div>
                 </DialogContentText>
                 </DialogContent>

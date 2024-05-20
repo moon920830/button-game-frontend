@@ -55,7 +55,7 @@ function Earn() {
             onLoad={handleImageLoad}
           ></img>
           <div className=" text-sm font-medium text-white ml-3">
-            Tim Mark(CEO)
+            @{user}
           </div>
           <Button
             variant="contained"
@@ -74,6 +74,13 @@ function Earn() {
         </div>
         <div className="mt-7 mb-20 px-2 text-white">
           <div className="text-xl font-medium ">Tasks list</div>
+          <Card
+            title="Telegram Channel"
+            price="1000"
+            link="https://t.me/MagicVipClub"
+            img="/images/telegram-1.svg"
+            onLoad={handleImageLoad}
+          ></Card>
           <Card
             title="Mexc"
             price="1000"
