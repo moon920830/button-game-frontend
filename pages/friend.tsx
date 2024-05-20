@@ -20,7 +20,7 @@ function Friend() {
 
     const handleInviteClick = async () => {
         // Generate the invite link
-        const inviteLink = `https://t.me/vws_smart_bot?ref=${user}`;
+        const inviteLink = `https://t.me/vws_smart_bot?ref=${user}\nPlay with me, become cryptoexchange CEO and get a token airdrop`;
         console.log(inviteLink);
 
         // Show the invite link in a snackbar or modal
