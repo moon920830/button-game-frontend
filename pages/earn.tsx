@@ -6,7 +6,9 @@ import Button from "@mui/material/Button";
 import CircularProgress from "@mui/material/CircularProgress";
 
 import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
+import ConstructionIcon from '@mui/icons-material/Construction';
 import EuroIcon from "@mui/icons-material/Euro";
+import Diversity3Icon from '@mui/icons-material/Diversity3';
 import { useEffect, useState } from "react";
 
 function Earn() {
@@ -349,21 +351,33 @@ function Earn() {
           ></Card>
         </div>
         <div className="fixed bottom-0 w-full flex justify-center">
-          <div
-            className="flex justify-center mt-5 bg-[rgba(39,42,47,0.8)] px-2 py-2 space-x-4 w-full backdrop-blur-sm"
-          >
+          <div className="grid grid-cols-5 justify-center mt-auto bg-[#272A2F] py-2 px-2 gap-1 w-full">
             <Link href={`/?user=${user}`}>
-              <div className="text-xs p-3 text-white text-center rounded-lg space-x-2 items-center flex">
-                <CurrencyExchangeIcon></CurrencyExchangeIcon>
-                <span>Exchange</span>
+              <div className=" text-xs text-white text-center rounded-lg items-center py-2">
+                <img src="/images/astronaut.png" alt="astronaut" className="w-[30px] h-[30px] m-auto"></img>
+                <div className="text-center">Exchange</div>
+              </div>
+            </Link>
+            <div className=" text-xs text-white text-center rounded-lg items-center py-2">
+              <ConstructionIcon sx={{width: '30px', height: '30px'}}></ConstructionIcon>
+              <div>Mine</div>
+            </div>
+            <Link href={"/friend"}>
+              <div className=" text-xs text-white text-center rounded-lg items-center py-2">
+                <Diversity3Icon sx={{width: '30px', height: '30px'}}></Diversity3Icon>
+                <div>Friends</div>
               </div>
             </Link>
             <Link href={"/earn"}>
-              <div className="bg-[#1C1F24] text-xs p-3 text-white text-center rounded-lg flex items-center space-x-1">
-                <EuroIcon></EuroIcon>
-                <span>Earn</span>
+              <div className="bg-[#1C1F24] text-xs py-2 text-white text-center rounded-lg items-center">
+                <EuroIcon sx={{width: '30px', height: '30px'}}></EuroIcon>
+                <div>Earn</div>
               </div>
             </Link>
+            <div className=" text-xs py-2 text-white text-center rounded-lg items-center">
+              <img src="/images/dollar-icon.svg" alt="astronaut" className="w-[30px] h-[30px] m-auto"></img>
+              <div>Airdrop</div>
+            </div>
           </div>
         </div>
       </div>

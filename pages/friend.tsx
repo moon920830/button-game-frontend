@@ -9,6 +9,7 @@ import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
 import EuroIcon from "@mui/icons-material/Euro";
 import Diversity3Icon from '@mui/icons-material/Diversity3';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import ConstructionIcon from '@mui/icons-material/Construction';
 
 function Friend() {
     const [user, setUser] = useState<string | null>("");
@@ -71,25 +72,33 @@ function Friend() {
                 </Button>
             </div>
             <div className="fixed bottom-0 w-full flex justify-center">
-                <div className="flex justify-center mt-auto bg-[#272A2F] py-2 space-x-4 w-full">
-                <Link href={`/?user=${user}`}>
-                    <div className=" text-xs p-3 text-white text-center rounded-lg space-x-2 items-center flex">
-                    <CurrencyExchangeIcon></CurrencyExchangeIcon>
-                    <span>Exchange</span>
+                <div className="grid grid-cols-5 justify-center mt-auto bg-[#272A2F] py-2 px-2 gap-1 w-full">
+                    <Link href={`/?user=${user}`}>
+                        <div className="text-xs text-white text-center rounded-lg items-center py-2">
+                        <img src="/images/astronaut.png" alt="astronaut" className="w-[30px] h-[30px] m-auto"></img>
+                        <div className="text-center">Exchange</div>
+                        </div>
+                    </Link>
+                    <div className=" text-xs text-white text-center rounded-lg items-center py-2">
+                        <ConstructionIcon sx={{width: '30px', height: '30px'}}></ConstructionIcon>
+                        <div>Mine</div>
                     </div>
-                </Link>
-                <Link href={"/friends"}>
-                    <div className="bg-[#1C1F24] text-xs p-3 text-white text-center rounded-lg flex items-center space-x-2">
-                    <Diversity3Icon></Diversity3Icon>
-                    <span>Friends</span>
+                    <Link href={"/friend"}>
+                        <div className=" bg-[#1C1F24] text-xs text-white text-center rounded-lg items-center py-2">
+                        <Diversity3Icon sx={{width: '30px', height: '30px'}}></Diversity3Icon>
+                        <div>Friends</div>
+                        </div>
+                    </Link>
+                    <Link href={"/earn"}>
+                        <div className=" text-xs py-2 text-white text-center rounded-lg items-center">
+                        <EuroIcon sx={{width: '30px', height: '30px'}}></EuroIcon>
+                        <div>Earn</div>
+                        </div>
+                    </Link>
+                    <div className=" text-xs py-2 text-white text-center rounded-lg items-center">
+                        <img src="/images/dollar-icon.svg" alt="astronaut" className="w-[30px] h-[30px] m-auto"></img>
+                        <div>Airdrop</div>
                     </div>
-                </Link>
-                <Link href={"/earn"}>
-                    <div className=" text-xs p-3 text-white text-center rounded-lg flex items-center space-x-2">
-                    <EuroIcon></EuroIcon>
-                    <span>Earn</span>
-                    </div>
-                </Link>
                 </div>
             </div>
         </>
