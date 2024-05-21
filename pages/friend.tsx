@@ -97,7 +97,7 @@ function Friend() {
             </div>
             <div className="text-lg font-medium text-white mx-4 mt-5">List of your friends</div>
             <div className="text-lg font-normal text-gray-600 mt-5 text-center">
-                You haven't invited anyone yet
+                You havent invited anyone yet
             </div>
             <div className="fixed bottom-0 w-full flex justify-center">
                 <div className="grid grid-cols-5 justify-center mt-auto bg-[#272A2F] py-2 px-2 gap-1 w-full">
