@@ -71,6 +71,34 @@ function Friend() {
                     <ContentCopyIcon></ContentCopyIcon>
                 </Button>
             </div>
+            <div className="flex mt-5 bg-[#272A2F] p-2 mx-4 rounded-lg space-x-4">
+                <img src="/images/gift.png" alt="gift" className="w-16 h-16"></img>
+                <div className="text-white text-sm font-normal flex flex-col space-y-2">
+                    <p className="font-medium">Invite a friend</p>
+                    <div className="flex items-center space-x-2">
+                        <div className=" bg-yellow-500 w-1 h-1 rounded-full"></div>
+                        <img src="/images/dollar-icon.svg" alt="dollar" className="w-4 h-4"></img>
+                        <div className="text-yellow-500 text-sm font-normal">+5,000</div>
+                        <div className="text-sm">for you and your friend</div>
+                    </div>
+                </div>
+            </div>
+            <div className="flex mt-5 bg-[#272A2F] p-2 mx-4 rounded-lg space-x-4">
+                <img src="/images/gift.png" alt="gift" className="w-16 h-16"></img>
+                <div className="text-white text-sm flex flex-col space-y-2">
+                    <p className="font-medium">Invite a friend with Telegram Premium</p>
+                    <div className="flex items-center space-x-2">
+                        <div className=" bg-yellow-500 w-1 h-1 rounded-full"></div>
+                        <img src="/images/dollar-icon.svg" alt="dollar" className="w-4 h-4"></img>
+                        <div className="text-yellow-500 text-sm font-normal">+5,000</div>
+                        <div className="text-sm">for you and your friend</div>
+                    </div>
+                </div>
+            </div>
+            <div className="text-lg font-medium text-white mx-4 mt-5">List of your friends</div>
+            <div className="text-lg font-normal text-gray-600 mt-5 text-center">
+                You haven't invited anyone yet
+            </div>
             <div className="fixed bottom-0 w-full flex justify-center">
                 <div className="grid grid-cols-5 justify-center mt-auto bg-[#272A2F] py-2 px-2 gap-1 w-full">
                     <Link href={`/?user=${user}`}>
