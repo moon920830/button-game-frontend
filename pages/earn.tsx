@@ -10,10 +10,12 @@ import ConstructionIcon from '@mui/icons-material/Construction';
 import EuroIcon from "@mui/icons-material/Euro";
 import Diversity3Icon from '@mui/icons-material/Diversity3';
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 function Earn() {
   const [user, setUser] = useState<string | null>("");
   const [loading, setLoading] = useState(true);
+  const router = useRouter();
 
   useEffect(() => {
     const user = localStorage.getItem("user");
@@ -76,13 +78,13 @@ function Earn() {
         </div>
         <div className="mt-7 mb-20 px-2 text-white">
           <div className="text-xl font-medium ">Tasks list</div>
-          <Card
+          {/* <Card
             title="Telegram Channel"
             price="1000"
             link="https://t.me/MagicVipClub"
             img="/images/telegram-1.svg"
             onLoad={handleImageLoad}
-          ></Card>
+          ></Card> */}
           <Card
             title="Mexc"
             price="1000"
@@ -158,62 +160,6 @@ function Earn() {
             price="1000"
             link=" http://www.tiktok.com/@spacetickets"
             img="/images/ticktok.png"
-            onLoad={handleImageLoad}
-          ></Card>
-          <Card
-            title="Telegram MagicVipClub Channel"
-            price="10000"
-            link="https://t.me/MagicVipClub"
-            img="/images/telegram-1.svg"
-            onLoad={handleImageLoad}
-          ></Card>
-          <Card
-            title="Telegram MiningVws Channel"
-            price="10000"
-            link="https://t.me/miningvws"
-            img="/images/telegram-1.svg"
-            onLoad={handleImageLoad}
-          ></Card>
-          <Card
-            title="Telegram VirtualWorld Channel"
-            price="10000"
-            link="https://t.me/VirtualsWorlds"
-            img="/images/telegram-1.svg"
-            onLoad={handleImageLoad}
-          ></Card>
-          <Card
-            title="Telegram MagicNFTcollection Channel"
-            price="10000"
-            link="https://t.me/MagicNFTcollections"
-            img="/images/telegram-1.svg"
-            onLoad={handleImageLoad}
-          ></Card>
-          <Card
-            title="Telegram MagicVipPeople Channel"
-            price="10000"
-            link="https://t.me/MagicVipPeople"
-            img="/images/telegram-1.svg"
-            onLoad={handleImageLoad}
-          ></Card>
-          <Card
-            title="Telegram P2PExchange Channel"
-            price="10000"
-            link="https://t.me/p2pExchenges"
-            img="/images/telegram-1.svg"
-            onLoad={handleImageLoad}
-          ></Card>
-          <Card
-            title="Telegram AirdropNftOpensea Channel"
-            price="10000"
-            link="https://t.me/AirdropNftOpensea"
-            img="/images/telegram-1.svg"
-            onLoad={handleImageLoad}
-          ></Card>
-          <Card
-            title="Telegram MagicNftClub Channel"
-            price="10000"
-            link="https://t.me/MagicNftClub"
-            img="/images/telegram-1.svg"
             onLoad={handleImageLoad}
           ></Card>
           <Card
@@ -309,6 +255,7 @@ function Earn() {
           ></Card>
           <Card
             title="Ton Jetttons"
+            description="Subscribe and mining will begin for you"
             price="1000"
             link="https://ton.app/ru/jettons/EQBfX9KO5yIFprHWPpJp3OsX-6cjLjEJF-h5uIQE3eLJY8_h"
             img="/images/getgem.png"
@@ -316,6 +263,7 @@ function Earn() {
           ></Card>
           <Card
             title="Ton Mining-Nft"
+            description="Subscribe and mining will begin for you"
             price="1000"
             link="https://ton.app/nft/mining-nft?id=1534"
             img="/images/getgem.png"
@@ -323,6 +271,7 @@ function Earn() {
           ></Card>
           <Card
             title="Ton Utilities"
+            description="Subscribe and mining will begin for you"
             price="1000"
             link="https://ton.app/utilities/vws-utilities?id=1531"
             img="/images/getgem.png"
@@ -330,6 +279,7 @@ function Earn() {
           ></Card>
           <Card
             title="Ton Magic-vip-People"
+            description="Subscribe and mining will begin for you"
             price="1000"
             link="https://ton.app/channels/magic-vip-people?id=1530"
             img="/images/getgem.png"
@@ -337,6 +287,7 @@ function Earn() {
           ></Card>
           <Card
             title="Ton Mining-Vws"
+            description="Subscribe and mining will begin for you"
             price="1000"
             link="https://ton.app/chats/mining-vws-and-mvp?id=1529"
             img="/images/getgem.png"
@@ -344,6 +295,7 @@ function Earn() {
           ></Card>
           <Card
             title="Ton Vws-games"
+            description="Subscribe and mining will begin for you"
             price="1000"
             link="https://ton.app/games/vws-games?id=1532"
             img="/images/getgem.png"
@@ -358,26 +310,30 @@ function Earn() {
                 <div className="text-center">Exchange</div>
               </div>
             </Link>
-            <div className=" text-xs text-white text-center rounded-lg items-center py-2">
-              <ConstructionIcon sx={{width: '30px', height: '30px'}}></ConstructionIcon>
-              <div>Mine</div>
-            </div>
+            <Link href={"/mine"}>
+              <div className={" text-xs text-center rounded-lg items-center py-2 "+(router.pathname==="/mine"?"bg-[#1C1F24] text-white":"text-[#777]")}>
+                <ConstructionIcon sx={{width: '30px', height: '30px'}}></ConstructionIcon>
+                <div>Mine</div>
+              </div>
+            </Link>
             <Link href={"/friend"}>
-              <div className=" text-xs text-white text-center rounded-lg items-center py-2">
+              <div className={" text-xs text-center rounded-lg items-center py-2 "+(router.pathname==="/friend"?"bg-[#1C1F24] text-white":"text-[#777]")}>
                 <Diversity3Icon sx={{width: '30px', height: '30px'}}></Diversity3Icon>
                 <div>Friends</div>
               </div>
             </Link>
             <Link href={"/earn"}>
-              <div className="bg-[#1C1F24] text-xs py-2 text-white text-center rounded-lg items-center">
+              <div className={"text-xs py-2 text-center rounded-lg items-center "+(router.pathname==="/earn"?"bg-[#1C1F24] text-white":"text-[#777]")}>
                 <EuroIcon sx={{width: '30px', height: '30px'}}></EuroIcon>
                 <div>Earn</div>
               </div>
             </Link>
-            <div className=" text-xs py-2 text-white text-center rounded-lg items-center">
-              <img src="/images/dollar-icon.svg" alt="astronaut" className="w-[30px] h-[30px] m-auto"></img>
-              <div>Airdrop</div>
-            </div>
+            <Link href={"/airdrop"}>
+              <div className=" text-xs py-2 text-white text-center rounded-lg items-center">
+                <img src="/images/dollar-icon.svg" alt="astronaut" className="w-[30px] h-[30px] m-auto"></img>
+                <div>Airdrop</div>
+              </div>
+            </Link>
           </div>
         </div>
       </div>

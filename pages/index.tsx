@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import axios from "axios";
 import Link from "next/link";
 import { updateItem } from "../app/lib/api";
@@ -224,26 +225,30 @@ export default function Index() {
               <div className="text-center">Exchange</div>
             </div>
           </Link>
-          <div className=" text-xs text-white text-center rounded-lg items-center py-2">
-            <ConstructionIcon sx={{width: '30px', height: '30px'}}></ConstructionIcon>
-            <div>Mine</div>
-          </div>
+          <Link href={"/mine"}>
+            <div className={" text-xs text-center rounded-lg items-center py-2 "+(router.pathname==="/mine"?"text-white":"text-[#777]")}>
+              <ConstructionIcon sx={{width: '30px', height: '30px'}}></ConstructionIcon>
+              <div>Mine</div>
+            </div>
+          </Link>
           <Link href={"/friend"}>
-            <div className=" text-xs text-white text-center rounded-lg items-center py-2">
+            <div className={" text-xs text-center rounded-lg items-center py-2 "+(router.pathname==="/friend"?"text-white":"text-[#777]")}>
               <Diversity3Icon sx={{width: '30px', height: '30px'}}></Diversity3Icon>
               <div>Friends</div>
             </div>
           </Link>
           <Link href={"/earn"}>
-            <div className=" text-xs py-2 text-white text-center rounded-lg items-center">
+            <div className={" text-xs py-2 text-center rounded-lg items-center "+(router.pathname==="/earn"?"text-white":"text-[#777]")}>
               <EuroIcon sx={{width: '30px', height: '30px'}}></EuroIcon>
               <div>Earn</div>
             </div>
           </Link>
-          <div className=" text-xs py-2 text-white text-center rounded-lg items-center">
-            <img src="/images/dollar-icon.svg" alt="astronaut" className="w-[30px] h-[30px] m-auto"></img>
-            <div>Airdrop</div>
-          </div>
+          <Link href={"/airdrop"}>
+            <div className={" text-xs py-2 text-white text-center rounded-lg items-center "+(router.pathname==="/airdrop"?"bg-[#1C1F24]":"")}>
+              <img src="/images/dollar-icon.svg" alt="astronaut" className="w-[30px] h-[30px] m-auto"></img>
+              <div>Airdrop</div>
+            </div>
+          </Link>
         </div>
       </div>
     </>

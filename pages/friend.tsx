@@ -10,10 +10,12 @@ import EuroIcon from "@mui/icons-material/Euro";
 import Diversity3Icon from '@mui/icons-material/Diversity3';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import ConstructionIcon from '@mui/icons-material/Construction';
+import { useRouter } from "next/router";
 
 function Friend() {
     const [user, setUser] = useState<string | null>("");
     const { enqueueSnackbar } = useSnackbar();
+    const router = useRouter();
     useEffect(() => {
       const user = localStorage.getItem("user");
       setUser(user);
@@ -90,7 +92,7 @@ function Friend() {
                     <div className="flex items-center space-x-2">
                         <div className=" bg-yellow-500 w-1 h-1 rounded-full"></div>
                         <img src="/images/dollar-icon.svg" alt="dollar" className="w-4 h-4"></img>
-                        <div className="text-yellow-500 text-sm font-normal">+5,000</div>
+                        <div className="text-yellow-500 text-sm font-normal">+10,000</div>
                         <div className="text-sm">for you and your friend</div>
                     </div>
                 </div>
@@ -107,26 +109,30 @@ function Friend() {
                         <div className="text-center">Exchange</div>
                         </div>
                     </Link>
-                    <div className=" text-xs text-white text-center rounded-lg items-center py-2">
-                        <ConstructionIcon sx={{width: '30px', height: '30px'}}></ConstructionIcon>
-                        <div>Mine</div>
-                    </div>
+                    <Link href={"/mine"}>
+                        <div className={" text-xs text-center rounded-lg items-center py-2 " + (router.pathname==="/mine"?"bg-[#1C1F24] text-white":"text-[#777]")}>
+                            <ConstructionIcon sx={{width: '30px', height: '30px'}}></ConstructionIcon>
+                            <div>Mine</div>
+                        </div>
+                    </Link>
                     <Link href={"/friend"}>
-                        <div className=" bg-[#1C1F24] text-xs text-white text-center rounded-lg items-center py-2">
+                        <div className={" text-xs text-center rounded-lg items-center py-2 " + (router.pathname==="/friend"?"bg-[#1C1F24] text-white":"text-[#777]")}>
                         <Diversity3Icon sx={{width: '30px', height: '30px'}}></Diversity3Icon>
                         <div>Friends</div>
                         </div>
                     </Link>
                     <Link href={"/earn"}>
-                        <div className=" text-xs py-2 text-white text-center rounded-lg items-center">
+                        <div className={" text-xs py-2 text-center rounded-lg items-center " + (router.pathname==="/earn"?"bg-[#1C1F24] text-white":"text-[#777]")}>
                         <EuroIcon sx={{width: '30px', height: '30px'}}></EuroIcon>
                         <div>Earn</div>
                         </div>
                     </Link>
-                    <div className=" text-xs py-2 text-white text-center rounded-lg items-center">
-                        <img src="/images/dollar-icon.svg" alt="astronaut" className="w-[30px] h-[30px] m-auto"></img>
-                        <div>Airdrop</div>
-                    </div>
+                    <Link href={"/airdrop"}>
+                        <div className=" text-xs py-2 text-white text-center rounded-lg items-center">
+                            <img src="/images/dollar-icon.svg" alt="astronaut" className="w-[30px] h-[30px] m-auto"></img>
+                            <div>Airdrop</div>
+                        </div>
+                    </Link>
                 </div>
             </div>
         </>

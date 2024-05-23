@@ -17,6 +17,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 interface CardProps {
     title : string,
+    description?: String,
     price : string,
     link : string,
     img : string,
@@ -32,7 +33,7 @@ const Transition = React.forwardRef(function Transition(
     return <Slide direction="up" ref={ref} {...props} />;
   });
 
-function Card({title, price, link, img, onLoad } : CardProps) {
+function Card({title, description, price, link, img, onLoad } : CardProps) {
     const snackbar = useSnackbar();
     const [open, setOpen] = React.useState(false);
 
@@ -88,6 +89,7 @@ function Card({title, price, link, img, onLoad } : CardProps) {
                 <DialogContent>
                 <DialogContentText id="alert-dialog-slide-description" sx={{color: 'white'}}>
                     <div className='text-2xl font-semibold text-center mt-3'>{title}</div>
+                    <div className='opacity-50 text-center'>{description}</div>
                     <div className='flex justify-center space-x-2 items-center mt-4'>
                         <img src='/images/dollar-icon.svg' alt='dollar' className='w-5 h-5'/>
                         <div>+{price}</div>
