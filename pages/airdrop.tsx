@@ -83,20 +83,20 @@ function Airdrop() {
         <div className="pt-7 mb-[90px] px-5 text-white rounded-t-3xl bg-[#1C1F24] border-t-2 border-[rgb(243,186,47)] shadow-km">
           <div className="text-xl font-medium ">Airdrop</div>
           <div className="flex flex-col mt-5">
-            <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>Swap #VWS </span></span>
-            <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>Mining Pool #VWS</span></span>
-            <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>exchange negotiations</span></span>
-            <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>Market maker negotiations</span></span>
-            <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>Key partnerships are coming</span></span>
-            <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>Airdrop Task list</span></span>
-            <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>Airdrop Nfts ETH</span></span>
-            <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>Airdrop NFTs MATIC</span></span>
-            <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>Airdrop NFTs BNB</span></span>
-            <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>Airdrop NFTs GAT</span></span>
-            <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>Airdrop NFTs TON</span></span>
-            <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>Rewards Mining Pool</span></span>
-            <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>Clicker VWS Social Tasks</span></span>
-            <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>Ton Blockchain Training</span></span>
+            <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>Swap #VWS  ✅</span></span>
+            <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>Mining Pool #VWS ✅</span></span>
+            <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>exchange negotiations ✅</span></span>
+            <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>Market maker negotiations ✅</span></span>
+            <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>Key partnerships are coming ✅</span></span>
+            <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>Airdrop Task list ✅</span></span>
+            <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>Airdrop Nfts ETH ✅</span></span>
+            <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>Airdrop NFTs MATIC ✅</span></span>
+            <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>Airdrop NFTs BNB ✅</span></span>
+            <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>Airdrop NFTs GAT ✅</span></span>
+            <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>Airdrop NFTs TON ✅</span></span>
+            <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>Rewards Mining Pool ✅</span></span>
+            <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>Clicker VWS Social Tasks ✅</span></span>
+            <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>Ton Blockchain Training ✅</span></span>
             <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>VWS Staking , </span></span>
             <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>Staking Mining NFTs , </span></span>
             <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>Domain Zone</span>,</span>

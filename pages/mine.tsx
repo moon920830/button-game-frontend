@@ -140,28 +140,28 @@ function Mine() {
           ></Card>
           <Card
             title="Swap VWS"
-            price="1000"
+            price="10000"
             link="https://dedust.io/swap/TON/VWS"
             img="/images/hamster.png"
             onLoad={handleImageLoad}
           ></Card>
           <Card
             title="Mining Pool VWS/TON"
-            price="1000"
+            price="10000"
             link="https://dedust.io/pools/EQCCa6jA_VzoQi76cAHmumoJfZbglVtY-DL-k8-f9h3vUOy2"
             img="/images/hamster.png"
             onLoad={handleImageLoad}
           ></Card>
           <Card
             title="Swap bot"
-            price="1000"
+            price="10000"
             link="https://t.me/tonRocketBot/cex?startapp=trade-VWS-TON"
             img="/images/hamster.png"
             onLoad={handleImageLoad}
           ></Card>
           <Card
             title="Mining NFTs"
-            price="1000"
+            price="10000"
             link="http://getgems.io/virtualsworlds"
             img="/images/hamster.png"
             onLoad={handleImageLoad}
