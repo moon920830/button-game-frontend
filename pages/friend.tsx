@@ -121,11 +121,11 @@ function Friend() {
             </div>
             <div className="text-lg font-medium text-white mx-4 mt-5">List of your friends</div>
             {items.length === 0 ? (
-                    <div className="text-lg font-normal text-gray-600 mt-5 text-center">
+                    <div className="text-lg font-normal text-gray-600 mt-5 text-center mb-[100px]">
                     You haven&apos;t invited anyone yet
                     </div>
                 ) : (
-                    <div>
+                    <div className="mb-[100px]">
                     {items.map((item, index) => (
                         <div key={index}>
                             <div className="flex flex-row items-center mt-5 bg-[#272A2F] p-2 px-4 mx-4 rounded-lg">
