@@ -28,7 +28,7 @@ function Friend() {
             setUser(user);
             if (user != "") {
                 const response = await axios.post(
-                    "http://localhost:5000/friends",
+                    "https://button-game-backend.onrender.com/friends",
                     { user }
                 );
                 setItems(response.data.items)
