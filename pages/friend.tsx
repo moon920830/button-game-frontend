@@ -11,8 +11,14 @@ import Diversity3Icon from '@mui/icons-material/Diversity3';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import ConstructionIcon from '@mui/icons-material/Construction';
 
+interface Item {
+    t_id: string,
+    mount: number
+}
+
 function Friend() {
     const [user, setUser] = useState<string | null>("");
+    const [items, setItems] = useState<Item[]>([]);
     const { enqueueSnackbar } = useSnackbar();
     useEffect(() => {
         const fetchData = async () => {
@@ -23,7 +29,7 @@ function Friend() {
                     "http://localhost:5000/friends",
                     { user }
                 );
-                console.log(response)
+                setItems(response.data.items)
             }
         }
         fetchData()
@@ -106,9 +112,24 @@ function Friend() {
                 </div>
             </div>
             <div className="text-lg font-medium text-white mx-4 mt-5">List of your friends</div>
-            <div className="text-lg font-normal text-gray-600 mt-5 text-center">
-                You havent invited anyone yet
-            </div>
+            {items.length === 0 ? (
+                    <div className="text-lg font-normal text-gray-600 mt-5 text-center">
+                    You haven't invited anyone yet
+                    </div>
+                ) : (
+                    <div>
+                    {items.map((item, index) => (
+                        <div key={index}>
+                            <div className="flex flex-row items-center mt-5 bg-[#272A2F] p-2 px-4 mx-4 rounded-lg">
+                                <div className="text-white text-lg">{index + 1 }</div>
+                                <div className="ml-4 text-white">{item.t_id}</div>
+                                <img src="/images/dollar-icon.svg" alt="dollar" className="w-4 h-4 ml-6"></img>
+                                <div className="ml-2 text-white">{item.mount}</div>
+                            </div>
+                        </div>
+                    ))}
+                    </div>
+            )}
             <div className="fixed bottom-0 w-full flex justify-center">
                 <div className="grid grid-cols-5 justify-center mt-auto bg-[#272A2F] py-2 px-2 gap-1 w-full">
                     <Link href={`/?user=${user}`}>

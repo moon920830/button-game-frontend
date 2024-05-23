@@ -37,8 +37,8 @@ export default function Index() {
     setMount(mount - 1);
     handleChange();
     try {
-      const id = localStorage.getItem("id");
-      updateItem(id, { count: newCount }); // Use the correct item ID here
+      const user = localStorage.getItem("user");
+      updateItem(user, { count: newCount }); // Use the correct item ID here
     } catch (error) {
       console.error("Failed to update item", error);
     }
