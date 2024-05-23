@@ -51,7 +51,7 @@ function Mine() {
       )}
 
       <div hidden={loading}>
-        <div className="px-2  flex py-3 bg-[#453209] items-center">
+        <div className="px-5  flex py-3 items-center">
           <img
             src="/images/avatar.png"
             alt="AvatarImg"
@@ -64,19 +64,23 @@ function Mine() {
           <Button
             variant="contained"
             sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: "4px",
               paddingY: "8px",
               fontSize: "12px",
               paddingX: "8px",
               marginLeft: "auto",
               borderRadius: "20px",
               textTransform: "none",
-              background: "#4C432D",
+              background: "#1C1F24",
             }}
           >
-            Choose exchange
+          <img className="w-7 h-7" src="/images/hamster.png" />
+          <span>Choose exchange</span>
           </Button>
         </div>
-        <div className="mt-7 mb-20 px-2 text-white">
+        <div className="pt-7 mb-20 px-5 text-white rounded-t-3xl bg-[#1C1F24] border-t-2 border-[rgb(243,186,47)] shadow-km">
           <div className="text-xl font-medium ">Tasks list</div>
           <Card
             title="Telegram MagicVipClub Channel"

@@ -39,7 +39,7 @@ function Friend() {
 
     return(
         <>
-            <div className="px-2  flex py-3 bg-[#453209] items-center">
+            <div className="px-5  flex py-3 items-center">
                 <img
                     src="/images/avatar.png"
                     alt="AvatarImg"
@@ -51,55 +51,61 @@ function Friend() {
                 <Button
                     variant="contained"
                     sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "4px",
                     paddingY: "8px",
                     fontSize: "12px",
                     paddingX: "8px",
                     marginLeft: "auto",
                     borderRadius: "20px",
                     textTransform: "none",
-                    background: "#4C432D",
+                    background: "#1C1F24",
                     }}
                 >
-                    Choose exchange
+                <img className="w-7 h-7" src="/images/hamster.png" />
+                <span>Choose exchange</span>
                 </Button>
             </div>
-            <div className="text-white text-3xl font-semibold text-center mt-5">Invite Friends!</div>
-            <div className="text-white text-lg font-medium text-center mt-5">You and your friend will receive bonuses</div>
-            <div className="flex mt-5 px-4 w-full space-x-2">            
-                <Button variant="contained" sx={{paddingY: '10px', fontSize: '18px', paddingX: '24px', borderRadius: '10px', textTransform: 'none', width: "100%" }} onClick={handleInviteClick}>
-                    Invite a friend
-                </Button>
-                <Button variant="contained"  sx={{paddingY: '10px', fontSize: '18px', paddingX: '24px', borderRadius: '10px', textTransform: 'none', }}>
-                    <ContentCopyIcon></ContentCopyIcon>
-                </Button>
-            </div>
-            <div className="flex mt-5 bg-[#272A2F] p-2 mx-4 rounded-lg space-x-4">
-                <img src="/images/gift.png" alt="gift" className="w-16 h-16"></img>
-                <div className="text-white text-sm font-normal flex flex-col space-y-2">
-                    <p className="font-medium">Invite a friend</p>
-                    <div className="flex items-center space-x-2">
-                        <div className=" bg-yellow-500 w-1 h-1 rounded-full"></div>
-                        <img src="/images/dollar-icon.svg" alt="dollar" className="w-4 h-4"></img>
-                        <div className="text-yellow-500 text-sm font-normal">+5,000</div>
-                        <div className="text-sm">for you and your friend</div>
+            <div className="flex flex-col space-y-5 px-5 pt-5 rounded-t-3xl bg-[#1C1F24] border-t-2 border-[rgb(243,186,47)] shadow-km">
+                <div className="text-white text-3xl font-semibold text-center">Invite Friends!</div>
+                <div className="text-white text-lg font-medium text-center">You and your friend will receive bonuses</div>
+                <div className="flex w-full space-x-2">            
+                    <Button variant="contained" sx={{paddingY: '10px', fontSize: '18px', paddingX: '24px', borderRadius: '10px', textTransform: 'none', width: "100%" }} onClick={handleInviteClick}>
+                        Invite a friend
+                    </Button>
+                    <Button variant="contained"  sx={{paddingY: '10px', fontSize: '18px', paddingX: '24px', borderRadius: '10px', textTransform: 'none', }}>
+                        <ContentCopyIcon></ContentCopyIcon>
+                    </Button>
+                </div>
+                <div className="flex bg-[#272A2F] rounded-2xl p-4 space-x-4">
+                    <img src="/images/gift.png" alt="gift" className="w-16 h-16"></img>
+                    <div className="text-white text-sm font-normal flex flex-col space-y-2">
+                        <p className="font-medium">Invite a friend</p>
+                        <div className="flex items-center space-x-2">
+                            <div className=" bg-yellow-500 w-1 h-1 rounded-full"></div>
+                            <img src="/images/dollar-icon.svg" alt="dollar" className="w-4 h-4"></img>
+                            <div className="text-yellow-500 text-sm font-normal">+5,000</div>
+                            <div className="text-sm">for you and your friend</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div className="flex mt-5 bg-[#272A2F] p-2 mx-4 rounded-lg space-x-4">
-                <img src="/images/gift.png" alt="gift" className="w-16 h-16"></img>
-                <div className="text-white text-sm flex flex-col space-y-2">
-                    <p className="font-medium">Invite a friend with Telegram Premium</p>
-                    <div className="flex items-center space-x-2">
-                        <div className=" bg-yellow-500 w-1 h-1 rounded-full"></div>
-                        <img src="/images/dollar-icon.svg" alt="dollar" className="w-4 h-4"></img>
-                        <div className="text-yellow-500 text-sm font-normal">+10,000</div>
-                        <div className="text-sm">for you and your friend</div>
+                <div className="flex bg-[#272A2F] rounded-2xl p-4 space-x-4">
+                    <img src="/images/gift.png" alt="gift" className="w-16 h-16"></img>
+                    <div className="text-white text-sm flex flex-col space-y-2">
+                        <p className="font-medium">Invite a friend with Telegram Premium</p>
+                        <div className="flex items-center space-x-2">
+                            <div className=" bg-yellow-500 w-1 h-1 rounded-full"></div>
+                            <img src="/images/dollar-icon.svg" alt="dollar" className="w-4 h-4"></img>
+                            <div className="text-yellow-500 text-sm font-normal">+10,000</div>
+                            <div className="text-sm">for you and your friend</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div className="text-lg font-medium text-white mx-4 mt-5">List of your friends</div>
-            <div className="text-lg font-normal text-gray-600 mt-5 text-center">
-                You havent invited anyone yet
+                <div className="text-lg font-medium text-white">List of your friends</div>
+                <div className="text-lg font-normal text-gray-600 text-center">
+                    You havent invited anyone yet
+                </div>
             </div>
             <div className="fixed bottom-0 w-full flex justify-center">
                 <div className="grid grid-cols-5 justify-center mt-auto bg-[#272A2F] py-2 px-2 gap-1 w-full">

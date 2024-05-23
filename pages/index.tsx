@@ -36,7 +36,7 @@ export default function Index() {
     const newCount = count + 1;
     setCount(newCount);
     setMount(mount - 1);
-    handleChange();
+    if(!showAnimation) handleChange();
     try {
       const id = localStorage.getItem("id");
       updateItem(id, { count: newCount }); // Use the correct item ID here
@@ -111,7 +111,7 @@ export default function Index() {
             `}
         </style>
       </div>
-      <div className="px-2 py-3 flex bg-[#453209] items-center">
+      <div className="px-5 py-3 flex items-center relative z-[1]">
         <img
           src="/images/avatar.png"
           alt="AvatarImg"
@@ -121,19 +121,23 @@ export default function Index() {
         <Button
           variant="contained"
           sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: "4px",
             paddingY: "8px",
             fontSize: "12px",
             paddingX: "8px",
             marginLeft: "auto",
             borderRadius: "20px",
             textTransform: "none",
-            background: "#4C432D",
+            background: "#1C1F24",
           }}
         >
-          Choose exchange
+          <img className="w-7 h-7" src="/images/hamster.png" />
+          <span>Choose exchange</span>
         </Button>
       </div>
-      <div className="px-2 relative">
+      <div className="px-5 relative rounded-t-3xl bg-[#1C1F24] border-t-2 border-[rgb(243,186,47)] shadow-km">
         <div className="grid grid-cols-3 gap-2 pt-5 ">
           <div className="py-2 text-xs font-medium bg-[#272A2F] rounded-2xl text-center">
             <div className="text-[#A0634B]">Earn per tap</div>
@@ -213,8 +217,8 @@ export default function Index() {
           </div>
         </div>
         <div className="flex mt-5 text-white text-lg font-medium">
-          <div className="">{mount}/1000</div>
-          <div className="ml-auto">Boost</div>
+          <div className="">⚡ {mount}/1000</div>
+          <div className="ml-auto">🚀 Boost</div>
         </div>
       </div>
       <div className="fixed bottom-0 w-full flex justify-center">
