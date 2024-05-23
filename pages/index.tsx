@@ -164,7 +164,7 @@ export default function Index() {
                 alt="dollar"
                 className="w-6 h-6"
               ></img>
-              <div className="text-white text-lg">0</div>
+              <div className="text-white text-lg">20</div>
             </div>
           </div>
         </div>
