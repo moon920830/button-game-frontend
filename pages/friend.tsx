@@ -15,8 +15,18 @@ function Friend() {
     const [user, setUser] = useState<string | null>("");
     const { enqueueSnackbar } = useSnackbar();
     useEffect(() => {
-      const user = localStorage.getItem("user");
-      setUser(user);
+        const fetchData = async () => {
+            const user = localStorage.getItem("user");
+            setUser(user);
+            if (user != "") {
+                const response = await axios.post(
+                    "http://localhost:5000/friends",
+                    { user }
+                );
+                console.log(response)
+            }
+        }
+        fetchData()
     });
 
     const handleInviteClick = async () => {
