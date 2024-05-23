@@ -80,7 +80,7 @@ function Mine() {
           <span>Choose exchange</span>
           </Button>
         </div>
-        <div className="pt-7 mb-20 px-5 text-white rounded-t-3xl bg-[#1C1F24] border-t-2 border-[rgb(243,186,47)] shadow-km">
+        <div className="pt-7 mb-[90px] px-5 text-white rounded-t-3xl bg-[#1C1F24] border-t-2 border-[rgb(243,186,47)] shadow-km">
           <div className="text-xl font-medium ">Tasks list</div>
           <Card
             title="Telegram MagicVipClub Channel"
@@ -136,6 +136,34 @@ function Mine() {
             price="10000"
             link="https://t.me/MagicNftClub"
             img="/images/telegram-1.svg"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Swap VWS"
+            price="1000"
+            link="https://dedust.io/swap/TON/VWS"
+            img="/images/hamster.png"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Mining Pool VWS/TON"
+            price="1000"
+            link="https://dedust.io/pools/EQCCa6jA_VzoQi76cAHmumoJfZbglVtY-DL-k8-f9h3vUOy2"
+            img="/images/hamster.png"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Swap bot"
+            price="1000"
+            link="https://t.me/tonRocketBot/cex?startapp=trade-VWS-TON"
+            img="/images/hamster.png"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Mining NFTs"
+            price="1000"
+            link="http://getgems.io/virtualsworlds"
+            img="/images/hamster.png"
             onLoad={handleImageLoad}
           ></Card>
         </div>
