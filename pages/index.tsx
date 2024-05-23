@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import axios from "axios";
 import Link from "next/link";
 import { updateItem } from "../app/lib/api";
@@ -35,7 +36,7 @@ export default function Index() {
     const newCount = count + 1;
     setCount(newCount);
     setMount(mount - 1);
-    handleChange();
+    if(!showAnimation) handleChange();
     try {
       const user = localStorage.getItem("user");
       updateItem(user, { count: newCount }); // Use the correct item ID here
@@ -110,7 +111,7 @@ export default function Index() {
             `}
         </style>
       </div>
-      <div className="px-2 py-3 flex bg-[#453209] items-center">
+      <div className="px-5 py-3 flex items-center relative z-[1]">
         <img
           src="/images/avatar.png"
           alt="AvatarImg"
@@ -120,19 +121,23 @@ export default function Index() {
         <Button
           variant="contained"
           sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: "4px",
             paddingY: "8px",
             fontSize: "12px",
             paddingX: "8px",
             marginLeft: "auto",
             borderRadius: "20px",
             textTransform: "none",
-            background: "#4C432D",
+            background: "#1C1F24",
           }}
         >
-          Choose exchange
+          <img className="w-7 h-7" src="/images/hamster.png" />
+          <span>Choose exchange</span>
         </Button>
       </div>
-      <div className="px-2 relative">
+      <div className="px-5 relative rounded-t-3xl bg-[#1C1F24] border-t-2 border-[rgb(243,186,47)] shadow-km">
         <div className="grid grid-cols-3 gap-2 pt-5 ">
           <div className="py-2 text-xs font-medium bg-[#272A2F] rounded-2xl text-center">
             <div className="text-[#A0634B]">Earn per tap</div>
@@ -159,7 +164,7 @@ export default function Index() {
                 alt="dollar"
                 className="w-6 h-6"
               ></img>
-              <div className="text-white text-lg">0</div>
+              <div className="text-white text-lg">20</div>
             </div>
           </div>
         </div>
@@ -212,8 +217,8 @@ export default function Index() {
           </div>
         </div>
         <div className="flex mt-5 text-white text-lg font-medium">
-          <div className="">{mount}/1000</div>
-          <div className="ml-auto">Boost</div>
+          <div className="">⚡ {mount}/1000</div>
+          <div className="ml-auto">🚀 Boost</div>
         </div>
       </div>
       <div className="fixed bottom-0 w-full flex justify-center">
@@ -224,26 +229,30 @@ export default function Index() {
               <div className="text-center">Exchange</div>
             </div>
           </Link>
-          <div className=" text-xs text-white text-center rounded-lg items-center py-2">
-            <ConstructionIcon sx={{width: '30px', height: '30px'}}></ConstructionIcon>
-            <div>Mine</div>
-          </div>
+          <Link href={"/mine"}>
+            <div className={" text-xs text-center rounded-lg items-center py-2 "+(router.pathname==="/mine"?"text-white":"text-[#777]")}>
+              <ConstructionIcon sx={{width: '30px', height: '30px'}}></ConstructionIcon>
+              <div>Mine</div>
+            </div>
+          </Link>
           <Link href={"/friend"}>
-            <div className=" text-xs text-white text-center rounded-lg items-center py-2">
+            <div className={" text-xs text-center rounded-lg items-center py-2 "+(router.pathname==="/friend"?"text-white":"text-[#777]")}>
               <Diversity3Icon sx={{width: '30px', height: '30px'}}></Diversity3Icon>
               <div>Friends</div>
             </div>
           </Link>
           <Link href={"/earn"}>
-            <div className=" text-xs py-2 text-white text-center rounded-lg items-center">
+            <div className={" text-xs py-2 text-center rounded-lg items-center "+(router.pathname==="/earn"?"text-white":"text-[#777]")}>
               <EuroIcon sx={{width: '30px', height: '30px'}}></EuroIcon>
               <div>Earn</div>
             </div>
           </Link>
-          <div className=" text-xs py-2 text-white text-center rounded-lg items-center">
-            <img src="/images/dollar-icon.svg" alt="astronaut" className="w-[30px] h-[30px] m-auto"></img>
-            <div>Airdrop</div>
-          </div>
+          <Link href={"/airdrop"}>
+            <div className={" text-xs py-2 text-white text-center rounded-lg items-center "+(router.pathname==="/airdrop"?"bg-[#1C1F24]":"")}>
+              <img src="/images/dollar-icon.svg" alt="astronaut" className="w-[30px] h-[30px] m-auto"></img>
+              <div>Airdrop</div>
+            </div>
+          </Link>
         </div>
       </div>
     </>

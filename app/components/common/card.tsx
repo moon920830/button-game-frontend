@@ -17,6 +17,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 interface CardProps {
     title : string,
+    description?: String,
     price : string,
     link : string,
     img : string,
@@ -32,7 +33,7 @@ const Transition = React.forwardRef(function Transition(
     return <Slide direction="up" ref={ref} {...props} />;
   });
 
-function Card({title, price, link, img, onLoad } : CardProps) {
+function Card({title, description, price, link, img, onLoad } : CardProps) {
     const snackbar = useSnackbar();
     const [open, setOpen] = React.useState(false);
 
@@ -61,7 +62,7 @@ function Card({title, price, link, img, onLoad } : CardProps) {
     }
     return (
         <>
-            <div className='cursor-pointer mt-5 bg-[#272A2F] px-2 py-2 flex flex-row rounded-md shadow-md' onClick={handleClickOpen}>
+            <div className='cursor-pointer mt-5 bg-[#272A2F] p-3 flex flex-row rounded-2xl shadow-md' onClick={handleClickOpen}>
                 <img src={img} alt='mexc' className='w-14 h-14' onLoad={onLoad}/>
                 <div className='text-md font-normal flex flex-col space-y-1 ml-3'>
                     <p>Join to our {title}</p>
@@ -88,6 +89,7 @@ function Card({title, price, link, img, onLoad } : CardProps) {
                 <DialogContent>
                 <DialogContentText id="alert-dialog-slide-description" sx={{color: 'white'}}>
                     <div className='text-2xl font-semibold text-center mt-3'>{title}</div>
+                    <div className='opacity-50 text-center'>{description}</div>
                     <div className='flex justify-center space-x-2 items-center mt-4'>
                         <img src='/images/dollar-icon.svg' alt='dollar' className='w-5 h-5'/>
                         <div>+{price}</div>
