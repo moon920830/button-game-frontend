@@ -122,7 +122,7 @@ function Friend() {
             <div className="text-lg font-medium text-white mx-4 mt-5">List of your friends</div>
             {items.length === 0 ? (
                     <div className="text-lg font-normal text-gray-600 mt-5 text-center">
-                    You haven't invited anyone yet
+                    You haven&apos;t invited anyone yet
                     </div>
                 ) : (
                     <div>
