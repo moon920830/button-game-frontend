@@ -31,7 +31,10 @@ function Friend() {
                     "https://button-game-backend.onrender.com/friends",
                     { user }
                 );
-                setItems(response.data.items)
+                if (response.data.items == undefined)
+                    setItems([]);
+                else
+                    setItems(response.data.items);
             }
         }
         fetchData()
