@@ -12,6 +12,7 @@ import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
 import EuroIcon from "@mui/icons-material/Euro";
 import Diversity3Icon from '@mui/icons-material/Diversity3';
 import ConstructionIcon from '@mui/icons-material/Construction';
+import { useSnackbar } from 'notistack';
 
 export default function Index() {
   const [count, setCount] = useState<number>(0);
@@ -22,6 +23,10 @@ export default function Index() {
   const router = useRouter();
   const userFromQuery = router.query.user?.toString() || "";
   let storageUser;
+  const snackbar = useSnackbar();
+  const handleChooseExchange = () => {
+    snackbar.enqueueSnackbar('Coming Soon!', { variant: 'info' });
+  }
   const handleChange = () => {
     setShowAnimation(true);
     setTimeout(() => {
@@ -119,6 +124,7 @@ export default function Index() {
         ></img>
         <div className=" text-sm font-medium text-white ml-3">@{user}</div>
         <Button
+          onClick={handleChooseExchange}
           variant="contained"
           sx={{
             display: "flex",
