@@ -8,11 +8,9 @@ import Link from "next/link";
 import { updateItem } from "../app/lib/api";
 import Button from "@mui/material/Button";
 
-import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
-import EuroIcon from "@mui/icons-material/Euro";
-import Diversity3Icon from '@mui/icons-material/Diversity3';
-import ConstructionIcon from '@mui/icons-material/Construction';
 import { useSnackbar } from 'notistack';
+import Header from "./Header";
+import Footer from "./Footer";
 
 export default function Index() {
   const [count, setCount] = useState<number>(0);
@@ -24,9 +22,7 @@ export default function Index() {
   const userFromQuery = router.query.user?.toString() || "";
   let storageUser;
   const snackbar = useSnackbar();
-  const handleChooseExchange = () => {
-    snackbar.enqueueSnackbar('Coming Soon!', { variant: 'info' });
-  }
+
   const handleChange = () => {
     setShowAnimation(true);
     setTimeout(() => {
@@ -116,33 +112,6 @@ export default function Index() {
             `}
         </style>
       </div>
-      <div className="px-5 py-3 flex items-center relative z-[1]">
-        <img
-          src="/images/avatar.png"
-          alt="AvatarImg"
-          className="w-10 h-10"
-        ></img>
-        <div className=" text-sm font-medium text-white ml-3">@{user}</div>
-        <Button
-          onClick={handleChooseExchange}
-          variant="contained"
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            gap: "4px",
-            paddingY: "8px",
-            fontSize: "12px",
-            paddingX: "8px",
-            marginLeft: "auto",
-            borderRadius: "20px",
-            textTransform: "none",
-            background: "#1C1F24",
-          }}
-        >
-          <img className="w-7 h-7" src="/images/hamster.png" />
-          <span>Choose exchange</span>
-        </Button>
-      </div>
       <div className="px-5 relative rounded-t-3xl bg-[#1C1F24] border-t-2 border-[rgb(243,186,47)] shadow-km">
         <div className="grid grid-cols-3 gap-2 pt-5 ">
           <div className="py-2 text-xs font-medium bg-[#272A2F] rounded-2xl text-center">
@@ -225,40 +194,6 @@ export default function Index() {
         <div className="flex mt-5 text-white text-lg font-medium">
           <div className="">⚡ {mount}/1000</div>
           <div className="ml-auto">🚀 Boost</div>
-        </div>
-      </div>
-      <div className="fixed bottom-0 w-full flex justify-center">
-        <div className="grid grid-cols-5 justify-center mt-auto bg-[#272A2F] py-2 px-2 gap-1 w-full">
-          <Link href={`/?user=${user}`}>
-            <div className="bg-[#1C1F24] text-xs text-white text-center rounded-lg items-center py-2">
-              <img src="/images/astronaut.png" alt="astronaut" className="w-[30px] h-[30px] m-auto"></img>
-              <div className="text-center">Exchange</div>
-            </div>
-          </Link>
-          <Link href={"/mine"}>
-            <div className={" text-xs text-center rounded-lg items-center py-2 "+(router.pathname==="/mine"?"text-white":"text-[#777]")}>
-              <ConstructionIcon sx={{width: '30px', height: '30px'}}></ConstructionIcon>
-              <div>Mine</div>
-            </div>
-          </Link>
-          <Link href={"/friend"}>
-            <div className={" text-xs text-center rounded-lg items-center py-2 "+(router.pathname==="/friend"?"text-white":"text-[#777]")}>
-              <Diversity3Icon sx={{width: '30px', height: '30px'}}></Diversity3Icon>
-              <div>Friends</div>
-            </div>
-          </Link>
-          <Link href={"/earn"}>
-            <div className={" text-xs py-2 text-center rounded-lg items-center "+(router.pathname==="/earn"?"text-white":"text-[#777]")}>
-              <EuroIcon sx={{width: '30px', height: '30px'}}></EuroIcon>
-              <div>Earn</div>
-            </div>
-          </Link>
-          <Link href={"/airdrop"}>
-            <div className={" text-xs py-2 text-white text-center rounded-lg items-center "+(router.pathname==="/airdrop"?"bg-[#1C1F24]":"")}>
-              <img src="/images/dollar-icon.svg" alt="astronaut" className="w-[30px] h-[30px] m-auto"></img>
-              <div>Airdrop</div>
-            </div>
-          </Link>
         </div>
       </div>
     </>
