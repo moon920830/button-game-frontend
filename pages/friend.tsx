@@ -72,7 +72,7 @@ function Friend() {
                     </Button>
                 </div>
                 <div className="flex bg-[#272A2F] rounded-2xl p-4 space-x-4">
-                    <img src="/images/gift.png" alt="gift" className="w-16 h-16"></img>
+                    <img src="/images/gift2.png" alt="gift" className="w-16 h-16"></img>
                     <div className="text-white text-sm font-normal flex flex-col space-y-2">
                         <p className="font-medium">Invite a friend</p>
                         <div className="flex items-center space-x-2">
@@ -84,7 +84,7 @@ function Friend() {
                     </div>
                 </div>
                 <div className="flex bg-[#272A2F] rounded-2xl p-4 space-x-4">
-                    <img src="/images/gift.png" alt="gift" className="w-16 h-16"></img>
+                    <img src="/images/gift1.png" alt="gift" className="w-16 h-16"></img>
                     <div className="text-white text-sm flex flex-col space-y-2">
                         <p className="font-medium">Invite a friend with Telegram Premium</p>
                         <div className="flex items-center space-x-2">
