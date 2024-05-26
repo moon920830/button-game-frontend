@@ -5,8 +5,9 @@ const Header=()=>{
   const [user, setUser] = useState<string | null>("");
   useEffect(() => {
     const user = localStorage.getItem("user");
+    console.log(user)
     setUser(user);
-  });
+  }, []);
   return (
     <div className="px-5 py-3 flex items-center relative z-[1]">
       <img
