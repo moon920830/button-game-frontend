@@ -55,6 +55,65 @@ function Mine() {
       <div hidden={loading}>
         <div className="pt-7 mb-[90px] px-5 text-white rounded-t-3xl bg-[#1C1F24] border-t-2 border-[rgb(243,186,47)] shadow-km">
           <div className="text-xl font-medium ">Tasks list</div>
+          {/* Conference organizeers */}
+          <Card
+            title="Dorahacks"
+            description="Conference Organizers"
+            price="10000"
+            link="https://dorahacks.io/buidl/12541"
+            img="/images/dorahacks.ico"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Questbook"
+            description="Conference Organizers"
+            price="10000"
+            link="https://questbook.app/dashboard/?chainId=10&isRenderingProposalBody=true&role=builder&grantId=65c7836df27e2e1702d2d279&proposalId=664dcc62c1ee73f92c911280"
+            img="/images/questbook.png"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="TON Community RUS"
+            description="Conference Organizers"
+            price="10000"
+            link="https://t.me/toncoin_rus"
+            img="/images/toncoin_rus.jpg"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="Telegram News"
+            description="Conference Organizers"
+            price="10000"
+            link="https://t.me/telegram"
+            img="/images/telegram-1.svg"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="TON Society"
+            description="Conference Organizers"
+            price="10000"
+            link="https://t.me/tonsociety"
+            img="/images/tonsociety.jpg"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="The Open Network"
+            description="Conference Organizers"
+            price="10000"
+            link="https://t.me/tonblockchain"
+            img="/images/toncoin_rus.jpg"
+            onLoad={handleImageLoad}
+          ></Card>
+          <Card
+            title="TMA Clicker Token VWS Game"
+            description="Conference Organizers"
+            price="10000"
+            link="https://tonresear.ch/t/tma-clicker-token-vws-game-mining-pool-vws-ton-dedust-io-mining-nfts-buidls-dorahacks-io/18457/3"
+            img="/images/tonresear-logo.png"
+            onLoad={handleImageLoad}
+          ></Card>
+
+          {/* TG Channel */}
           <Card
             title="Telegram MagicVipClub Channel"
             price="10000"
