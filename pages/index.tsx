@@ -29,6 +29,31 @@ export default function Index() {
       setShowAnimation(false);
     }, 1000);
   };
+  const getLevelInfo = () => {
+    switch (Math.floor(count / 1000))
+    {
+      case 0:
+        return {text: "Bronze", number: 1};
+      case 1:
+        return {text: "Silver", number: 2};
+      case 2:
+        return {text: "Platinum", number: 3};
+      case 3:
+        return {text: "Diamond", number: 4};
+      case 4:
+        return {text: "Master", number: 5};
+      case 5:
+        return {text: "Grandmaster", number: 6};
+      case 6:
+        return {text: "Elite", number: 7};
+      case 7:
+        return {text: "Legendary", number: 8};
+      case 8:
+        return {text: "Mythic", number: 9};
+      default:
+        return {text: "Mythic", number: 9};
+    }
+  }
   const handleIncrement = (event: React.MouseEvent<HTMLDivElement>) => {
     // const { clientX, clientY } = event
     const { clientX, clientY } = event;
@@ -152,16 +177,16 @@ export default function Index() {
           <div className="text-2xl font-semibold text-white">{count}</div>
         </div>
         <div className="flex mt-5 text-white items-center">
-          <div className="font-semibold text-xs">Bronze &gt;</div>
+          <div className="font-semibold text-xs">{getLevelInfo().text} &gt;</div>
           <div className="ml-auto text-xs">
-            <span className="text-[#8B8E93] mr-2">Level</span>1/9
+            <span className="text-[#8B8E93] mr-2">Level</span>{getLevelInfo().number}/9
           </div>
         </div>
         <div className="z-0 relative overflow-hidden h-3 rounded-full bg-[#FFFFFF] bg-opacity-15 mt-1">
           <div
             className="h-full rounded-full transition-transform !duration-500 opacity-100"
             style={{
-              transform: `translateX(-${100 - (3 + count / 50)}%)`,
+              transform: `translateX(-${100 - (count % 1000)/1000*100}%)`,
               background: "-webkit-linear-gradient(left, #0075FF, #86BEFF)",
             }}
           ></div>
