@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://button-game-backend.onrender.com', // Adjust the baseURL to your backend server
+  baseURL: 'https://vws-be.vercel.app', // Adjust the baseURL to your backend server
   // baseURL: 'http://localhost:5000'
 });
 

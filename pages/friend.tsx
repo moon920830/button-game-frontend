@@ -30,7 +30,7 @@ function Friend() {
             setUser(user);
             if (user != "") {
                 const response = await axios.post(
-                    "https://button-game-backend.onrender.com/friends",
+                    "https://vws-be.vercel.app/friends",
                     { user }
                 );
                 if (response.data.items == undefined)
