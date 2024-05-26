@@ -17,7 +17,7 @@ const Footer=()=>{
       <div className="grid grid-cols-5 justify-center mt-auto bg-[#272A2F] py-2 px-2 gap-1 w-full">
         <Link href={`/?user=${user}`}>
           <div className={"text-xs py-2 text-center rounded-lg items-center "+(router.pathname==="/"?"bg-[#1C1F24] text-white":"text-[#777]")}>
-            <img src="/images/astronaut.png" alt="astronaut" className="w-[30px] h-[30px] m-auto"></img>
+            <img src="/images/exchange.webp" alt="astronaut" className="w-[30px] h-[30px] m-auto"></img>
             <div className="text-center">Exchange</div>
           </div>
         </Link>
@@ -41,7 +41,7 @@ const Footer=()=>{
         </Link>
         <Link href={"/airdrop"}>
           <div className={"text-xs py-2 text-center rounded-lg items-center "+(router.pathname==="/airdrop"?"bg-[#1C1F24] text-white":"text-[#777]")}>
-            <img src="/images/dollar-icon.svg" alt="astronaut" className="w-[30px] h-[30px] m-auto"></img>
+            <img src="/images/airdrop.png" alt="astronaut" className="w-[30px] h-[30px] m-auto"></img>
             <div>Airdrop</div>
           </div>
         </Link>
