@@ -8,7 +8,8 @@ import Footer from './Footer';
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <TonConnectUIProvider
-      manifestUrl="/tonconnect-manifest.json"
+      // manifestUrl="/tonconnect-manifest.json"
+      manifestUrl="https://ipfs.io/ipfs/QmPGbEC1E62wMWi11Yn3Q3K35e1fdPiyU7qXH9jX9mq7tP"
       uiPreferences={{ theme: THEME.DARK }}
       walletsListConfiguration={{
         includeWallets: [
