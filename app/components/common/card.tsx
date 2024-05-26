@@ -52,7 +52,7 @@ function Card({title, description, price, link, img, onLoad } : CardProps) {
             title:  title,
             id : id,
         }
-        const response = await axios.post('https://vws-be.vercel.app/bonous', data);
+        const response = await axios.post('https://button-game-backend.onrender.com/bonous', data);
         console.log(response.data)
         if(response.data.stats == "success"){
             snackbar.enqueueSnackbar(`You gain 1000 coins.  Your balance is ${response.data.mount}`, {autoHideDuration : 1000})

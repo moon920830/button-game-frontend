@@ -68,14 +68,14 @@ export default function Index() {
       // storageUser = localStorage.getItem("user");
       if (user != "") {
         const response = await axios.post(
-          "https://vws-be.vercel.app/items",
+          "https://button-game-backend.onrender.com/items",
           { user }
         );
         if (response.data.stats === "success") {
           const id = response.data.item._id;
           localStorage.setItem("id", id);
           const res = await axios.get(
-            "https://vws-be.vercel.app/items"
+            "https://button-game-backend.onrender.com/items"
           );
           const data = res.data;
           // Assuming you have an item with an initial mount value
