@@ -80,9 +80,9 @@ function Airdrop() {
             <span className="flex items-center space-x-1 mt-1 capitalize"><div className="rounded-full min-w-4 h-4 bg-[#0F0]" /> <span>Listing all exchange</span></span>
             <span className="mt-5">Donations</span>
             <span className="mt-2.5">TON</span>
-            <span className="mt-2.5">UQARROkNiK15pmaOZZoxtSra3v39Nd3XJT1DrLSrxVUH4Aci</span>
+            <span className="mt-2.5" style={{ wordBreak: "break-word" }}>UQARROkNiK15pmaOZZoxtSra3v39Nd3XJT1DrLSrxVUH4Aci</span>
             <span className="mt-2.5 uppercase">bnb eth matic btc</span>
-            <span className="mt-2.5">0xc69F83A668b3bBAd0B5570dbccF98Ec3C3e50eF3</span>
+            <span className="mt-2.5" style={{ wordBreak: "break-word" }}>0xc69F83A668b3bBAd0B5570dbccF98Ec3C3e50eF3</span>
           </div>
         </div>
       </div>
